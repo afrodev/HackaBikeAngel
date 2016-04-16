@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */; };
 		118B70AF1CC2FFAB00AA53B2 /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */; };
+		118B70B41CC304AF00AA53B2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70B31CC304AF00AA53B2 /* LoginVC.swift */; };
 		11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */; };
 		11D169971CC2FE7500975011 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */; };
 		11D169981CC2FE7500975011 /* GooglePlacesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169841CC2FE7500975011 /* GooglePlacesCell.xib */; };
@@ -22,7 +23,6 @@
 		11D169A01CC2FE7500975011 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D169931CC2FE7500975011 /* SCLTimerDisplay.m */; };
 		11D169A11CC2FE7500975011 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D169951CC2FE7500975011 /* UIImage+ImageEffects.m */; };
 		8B5AD9511CC2F36A00770EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */; };
-		8B5AD9531CC2F36A00770EA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AD9521CC2F36A00770EA0 /* ViewController.swift */; };
 		8B5AD9561CC2F36A00770EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5AD9541CC2F36A00770EA0 /* Main.storyboard */; };
 		8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AD9571CC2F36A00770EA0 /* HackaBike.xcdatamodeld */; };
 		8B5AD95B1CC2F36A00770EA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */; };
@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		118B70B31CC304AF00AA53B2 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesAutocomplete.h; sourceTree = "<group>"; };
 		11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		4E95C6E0FF510B71A80E9CF1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8B5AD94D1CC2F36A00770EA0 /* HackaBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackaBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B5AD9521CC2F36A00770EA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B5AD9551CC2F36A00770EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B5AD9581CC2F36A00770EA0 /* HackaBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackaBike.xcdatamodel; sourceTree = "<group>"; };
 		8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +88,50 @@
 				A2D2FC5F8022E4EF5E5EE896 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		118B70B01CC3043E00AA53B2 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */,
+				11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */,
+				11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */,
+				11D169841CC2FE7500975011 /* GooglePlacesCell.xib */,
+				11D169851CC2FE7500975011 /* GooglePlacesTableViewCell.swift */,
+			);
+			name = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		118B70B11CC3045400AA53B2 /* MapHelper */ = {
+			isa = PBXGroup;
+			children = (
+				118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */,
+				118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */,
+			);
+			name = MapHelper;
+			sourceTree = "<group>";
+		};
+		118B70B21CC3047B00AA53B2 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				11D169861CC2FE7500975011 /* JSSAlertView.swift */,
+				11D169871CC2FE7500975011 /* SCLAlertView.h */,
+				11D169881CC2FE7500975011 /* SCLAlertView.m */,
+				11D169891CC2FE7500975011 /* SCLAlertViewResponder.h */,
+				11D1698A1CC2FE7500975011 /* SCLAlertViewResponder.m */,
+				11D1698B1CC2FE7500975011 /* SCLAlertViewStyleKit.h */,
+				11D1698C1CC2FE7500975011 /* SCLAlertViewStyleKit.m */,
+				11D1698D1CC2FE7500975011 /* SCLButton.h */,
+				11D1698E1CC2FE7500975011 /* SCLButton.m */,
+				11D1698F1CC2FE7500975011 /* SCLMacros.h */,
+				11D169901CC2FE7500975011 /* SCLTextView.h */,
+				11D169911CC2FE7500975011 /* SCLTextView.m */,
+				11D169921CC2FE7500975011 /* SCLTimerDisplay.h */,
+				11D169931CC2FE7500975011 /* SCLTimerDisplay.m */,
+				11D169941CC2FE7500975011 /* UIImage+ImageEffects.h */,
+				11D169951CC2FE7500975011 /* UIImage+ImageEffects.m */,
+			);
+			name = AlertView;
 			sourceTree = "<group>";
 		};
 		3C0193FA9E5FF0CB681BDCC5 /* Pods */ = {
@@ -120,31 +164,11 @@
 		8B5AD94F1CC2F36A00770EA0 /* HackaBike */ = {
 			isa = PBXGroup;
 			children = (
-				118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */,
-				118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */,
-				11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */,
-				11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */,
-				11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */,
-				11D169841CC2FE7500975011 /* GooglePlacesCell.xib */,
-				11D169851CC2FE7500975011 /* GooglePlacesTableViewCell.swift */,
-				11D169861CC2FE7500975011 /* JSSAlertView.swift */,
-				11D169871CC2FE7500975011 /* SCLAlertView.h */,
-				11D169881CC2FE7500975011 /* SCLAlertView.m */,
-				11D169891CC2FE7500975011 /* SCLAlertViewResponder.h */,
-				11D1698A1CC2FE7500975011 /* SCLAlertViewResponder.m */,
-				11D1698B1CC2FE7500975011 /* SCLAlertViewStyleKit.h */,
-				11D1698C1CC2FE7500975011 /* SCLAlertViewStyleKit.m */,
-				11D1698D1CC2FE7500975011 /* SCLButton.h */,
-				11D1698E1CC2FE7500975011 /* SCLButton.m */,
-				11D1698F1CC2FE7500975011 /* SCLMacros.h */,
-				11D169901CC2FE7500975011 /* SCLTextView.h */,
-				11D169911CC2FE7500975011 /* SCLTextView.m */,
-				11D169921CC2FE7500975011 /* SCLTimerDisplay.h */,
-				11D169931CC2FE7500975011 /* SCLTimerDisplay.m */,
-				11D169941CC2FE7500975011 /* UIImage+ImageEffects.h */,
-				11D169951CC2FE7500975011 /* UIImage+ImageEffects.m */,
+				118B70B21CC3047B00AA53B2 /* AlertView */,
+				118B70B11CC3045400AA53B2 /* MapHelper */,
+				118B70B01CC3043E00AA53B2 /* GooglePlaces */,
 				8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */,
-				8B5AD9521CC2F36A00770EA0 /* ViewController.swift */,
+				118B70B31CC304AF00AA53B2 /* LoginVC.swift */,
 				8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */,
 				8B5AD9541CC2F36A00770EA0 /* Main.storyboard */,
 				8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */,
@@ -282,8 +306,8 @@
 			files = (
 				118B70AF1CC2FFAB00AA53B2 /* PinAnnotation.swift in Sources */,
 				11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */,
-				8B5AD9531CC2F36A00770EA0 /* ViewController.swift in Sources */,
 				11D169A11CC2FE7500975011 /* UIImage+ImageEffects.m in Sources */,
+				118B70B41CC304AF00AA53B2 /* LoginVC.swift in Sources */,
 				11D169A01CC2FE7500975011 /* SCLTimerDisplay.m in Sources */,
 				11D1699F1CC2FE7500975011 /* SCLTextView.m in Sources */,
 				118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */,

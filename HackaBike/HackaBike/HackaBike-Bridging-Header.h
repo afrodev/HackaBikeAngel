@@ -6,5 +6,6 @@
 #define FacebookTutorial_Bridging_Header_h
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "SCLAlertView.h"
 
 #endif

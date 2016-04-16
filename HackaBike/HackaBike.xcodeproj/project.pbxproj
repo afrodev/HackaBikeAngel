@@ -13,7 +13,7 @@
 		8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B5AD9571CC2F36A00770EA0 /* HackaBike.xcdatamodeld */; };
 		8B5AD95B1CC2F36A00770EA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */; };
 		8B5AD95E1CC2F36A00770EA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5AD95C1CC2F36A00770EA0 /* LaunchScreen.storyboard */; };
-		8BEBC3B51CC2F4AB0060DC1C /* Lixo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBC3B41CC2F4AB0060DC1C /* Lixo.m */; };
+		8BEBC3B71CC2F9C80060DC1C /* MapKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */; };
 		B355EED9FB2F92AC97B545A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D2FC5F8022E4EF5E5EE896 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +28,7 @@
 		8B5AD95D1CC2F36A00770EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B5AD95F1CC2F36A00770EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BEBC3B21CC2F4AA0060DC1C /* HackaBike-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackaBike-Bridging-Header.h"; sourceTree = "<group>"; };
-		8BEBC3B31CC2F4AB0060DC1C /* Lixo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lixo.h; sourceTree = "<group>"; };
-		8BEBC3B41CC2F4AB0060DC1C /* Lixo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lixo.m; sourceTree = "<group>"; };
+		8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapKitVC.swift; sourceTree = "<group>"; };
 		A2D2FC5F8022E4EF5E5EE896 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF620B490F7FA0037A673A12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,13 +85,12 @@
 			children = (
 				8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */,
 				8B5AD9521CC2F36A00770EA0 /* ViewController.swift */,
+				8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */,
 				8B5AD9541CC2F36A00770EA0 /* Main.storyboard */,
 				8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */,
 				8B5AD95C1CC2F36A00770EA0 /* LaunchScreen.storyboard */,
 				8B5AD95F1CC2F36A00770EA0 /* Info.plist */,
 				8B5AD9571CC2F36A00770EA0 /* HackaBike.xcdatamodeld */,
-				8BEBC3B31CC2F4AB0060DC1C /* Lixo.h */,
-				8BEBC3B41CC2F4AB0060DC1C /* Lixo.m */,
 				8BEBC3B21CC2F4AA0060DC1C /* HackaBike-Bridging-Header.h */,
 			);
 			path = HackaBike;
@@ -221,9 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5AD9531CC2F36A00770EA0 /* ViewController.swift in Sources */,
-				8BEBC3B51CC2F4AB0060DC1C /* Lixo.m in Sources */,
 				8B5AD9511CC2F36A00770EA0 /* AppDelegate.swift in Sources */,
 				8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */,
+				8BEBC3B71CC2F9C80060DC1C /* MapKitVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

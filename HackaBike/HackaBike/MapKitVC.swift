@@ -15,7 +15,6 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var esqButton: UIButton!
     @IBOutlet weak var dirButton: UIView!
-    @IBOutlet weak var container: UIView!
     
       var myRoute : MKRoute?
     // Distancia inicial de abrangencia (Zoom)
@@ -42,31 +41,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     var cells: [LiquidFloatingCell] = []
     var liquidButtonBackground = UIView()
     var floatingActionButton: LiquidFloatingActionButton!
-    
-    func animationUp() {
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(MapKitVC.handleTap(_:)))
-        self.view.addGestureRecognizer(tap)
-        self.container.hidden = false
-        self.view.bringSubviewToFront(self.container)
-        UIView.animateWithDuration(0.5, delay: 0.3, options: [], animations: {
-            self.container.center.y -= self.view.bounds.height
-            }, completion: { (value: Bool) in
-        })
         
-    }
-    
-    func animationDown() {
-        UIView.animateWithDuration(0.5, delay: 0.3, options: [], animations: {
-            self.container.center.y += self.view.bounds.height }, completion: { (value: Bool) in
-                self.container.hidden = true
-                self.view.sendSubviewToBack(self.container)
-        })
-    }
-    
-    func handleTap(recognizer: UITapGestureRecognizer) {
-        animationDown()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
@@ -181,7 +156,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         switch index {
         case 0:
-            self.animationUp()
+            performSegueWithIdentifier("SendAlertVC", sender: self)
         case 1:
             DevicesVC.writeValue("NOT+1/r/n")
         case 2:

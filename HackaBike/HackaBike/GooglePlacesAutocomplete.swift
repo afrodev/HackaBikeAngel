@@ -275,11 +275,7 @@ public class GooglePlacesAutocomplete: UINavigationController {
         
         closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: #selector(GooglePlacesAutocomplete.close))
         closeButton.style = UIBarButtonItemStyle.Done
-        closeButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        
-        //        saveButton = UIBarButtonItem(title: "Usar", style: UIBarButtonItemStyle.Done, target: self, action: "salvar")
-        //        saveButton.style = UIBarButtonItemStyle.Done
-        
+        closeButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)        
         gpaViewController.navigationItem.leftBarButtonItem = closeButton
         gpaViewController.navigationItem.title = "Buscar endereço"
     }

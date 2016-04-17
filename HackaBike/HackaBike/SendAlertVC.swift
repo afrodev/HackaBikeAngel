@@ -11,11 +11,19 @@ import UIKit
 class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableAlert: UITableView!
+    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var localLabel: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableAlert.delegate = self
         self.tableAlert.dataSource = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.title = "FEED"
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +45,10 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 
+    @IBAction func send(sender: AnyObject) {
+        //addd txt na table
+    }
+    
     /*
     // MARK: - Navigation
 

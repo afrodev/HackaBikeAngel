@@ -12,7 +12,15 @@ Projeto Desenvolvido na AngelHack São Paulo 2016
 [Junior Magalhões](https://www.facebook.com/juniormagalhaesixd?fref=ts) | [Michelly Sorges](https://www.facebook.com/michellysorge?fref=ts)
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 
-## Desafio
+### Público-alvo 
+
+Ciclistas
+
+### Proposta de Valor
+
+Experiência inovadora
+
+### Desafio
 
 - [ ] Bluemix
 - [ ] GS1

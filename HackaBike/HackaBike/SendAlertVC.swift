@@ -76,10 +76,10 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         post.longitude = Singleton.sharedInstance.pessoaAtual?.longitude
         post.pessoaNome = Singleton.sharedInstance.pessoaAtual?.name
         
-        PostController.insertPost(post) { (resp:String?) in
-            print(resp)
-            print("Ïnserido com sucesso")
-        }
+//        PostController.insertPost(post) { (resp:String?) in
+//            print(resp)
+//            print("Ïnserido com sucesso")
+//        }
     }
     
     /*

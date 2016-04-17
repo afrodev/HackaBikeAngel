@@ -40,37 +40,40 @@ class PostController: NSObject {
     }
     
     class func insertPost(post: Post, completionHandler: (String?) -> ()) {
-        var parameters = [
-            "pessoaId" : [
-                "objectId": 123,
+        
+        let parameters = [
+            "objectId" : post.objectId,
+            "pessoaId" : ["objectId" : post.pessoaNome,
                 "__type": "Pointer",
-                "className": "Person"
-            ],
-            "pessoaNome" : "\n",
-            "localizacao":[
-                "latitude": 123,
-                "longitude": 123,
-                "__type": "GeoPoint"
-            ],
-            "titulo": "Buraco"
-        ]
-        
-        
-        
-        parameters = [
-            "pessoaId" : [
-                "objectId": post.pessoaId,
-                "__type": "Pointer",
-                "className": "Person"
-            ],
-            "pessoaNome" : post.pessoaNome,
+                "className": "Person"],
             "localizacao":[
                 "latitude": post.latitude,
                 "longitude": post.longitude,
                 "__type": "GeoPoint"
             ],
-            "titulo": post.titulo
+            "titulo": post.titulo,
+            "pessoaNome": post.pessoaNome
+            
         ]
+        
+        let request = Alamofire.request(.POST, kBASE_URL + "/1/classes/Post", parameters: parameters as? [String : AnyObject], headers: kHEADERS, encoding: .JSON)
+        
+        request.responseJSON { (response:Response<AnyObject, NSError>) -> Void in
+            do {
+                let responseDictionary = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments) as! NSDictionary
+                
+                if let resultObjectId = responseDictionary.objectForKey("objectId") as? String  {
+                    completionHandler(resultObjectId)
+                } else {
+                    completionHandler("ss")
+                }
+                
+            } catch _ {
+                print("erro ao salvar pessoa")
+            }
+        }
+        
+        
         
         
 //        let request = Alamofire.request(.POST, kBASE_URL + "/1/classes/Post", parameters: parameters as? [String : NSObject], headers: kHEADERS, encoding: .JSON)

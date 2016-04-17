@@ -104,13 +104,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             Navigator().push("IndexOneVC", navigation: self.navigationController!)
         case 1:
             DevicesVC.writeValue("NOT+1/r/n")
-            //Navigator().push("IndexTwoVC", navigation: self.navigationController!)
         case 2:
             DevicesVC.writeValue("NOT+1/r/n")
-            //Navigator().push("IndexThreeVC", navigation: self.navigationController!)
         case 3:
             DevicesVC.writeValue("NOT+1/r/n")
-            //Navigator().push("IndexFourVC", navigation: self.navigationController!)
         case 4:
             DevicesVC.writeValue("NOT+1/r/n")
         default:

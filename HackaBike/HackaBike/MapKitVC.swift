@@ -100,13 +100,17 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         switch index {
         case 0:
-            Navigator().push("IndexOneVC", navigation: self.navigationController!)
+            DevicesVC.writeValue("NOT+1/r/n")
+            //Navigator().push("IndexOneVC", navigation: self.navigationController!)
         case 1:
-            Navigator().push("IndexTwoVC", navigation: self.navigationController!)
+            DevicesVC.writeValue("NOT+1/r/n")
+            //Navigator().push("IndexTwoVC", navigation: self.navigationController!)
         case 2:
-            Navigator().push("IndexThreeVC", navigation: self.navigationController!)
+            DevicesVC.writeValue("NOT+1/r/n")
+            //Navigator().push("IndexThreeVC", navigation: self.navigationController!)
         case 3:
-            Navigator().push("IndexFourVC", navigation: self.navigationController!)
+            DevicesVC.writeValue("NOT+1/r/n")
+            //Navigator().push("IndexFourVC", navigation: self.navigationController!)
         default:
             print("Error")
         }

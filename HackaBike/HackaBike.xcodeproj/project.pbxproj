@@ -331,6 +331,7 @@
 				TargetAttributes = {
 					8B5AD94C1CC2F36A00770EA0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 54JDK55DR5;
 					};
 				};
 			};
@@ -573,6 +574,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HackaBike/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackathon.bike.HackaBike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -591,6 +593,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HackaBike/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackathon.bike.HackaBike;
 				PRODUCT_NAME = "$(TARGET_NAME)";

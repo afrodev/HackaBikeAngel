@@ -57,7 +57,7 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         
         //Inicia a tableView com conteudo limpo
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("update"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(DevicesVC.update), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
     }
     

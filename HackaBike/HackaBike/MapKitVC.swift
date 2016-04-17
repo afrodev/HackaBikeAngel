@@ -10,13 +10,18 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GooglePlacesAutocompleteDelegate, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
+class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GooglePlacesAutocompleteDelegate, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource, DispositivosBluetoothProtocol {
     
+    @IBOutlet weak var temperatura: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var esqButton: UIButton!
     @IBOutlet weak var dirButton: UIView!
     
-      var myRoute : MKRoute?
+    var distancias:[Double]?
+    var passos:[String]?
+    
+    
+    var myRoute : MKRoute?
     // Distancia inicial de abrangencia (Zoom)
     let regionRadius: CLLocationDistance = 1000
     
@@ -41,7 +46,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     var cells: [LiquidFloatingCell] = []
     var liquidButtonBackground = UIView()
     var floatingActionButton: LiquidFloatingActionButton!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
@@ -49,6 +54,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         
         // Configurando a mapview
         mapView.delegate = self
+        //locationManager.delegate = self
         
         blurMapBackground.frame.size = screenSize()
         blurMapBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.8)
@@ -91,6 +97,33 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.requestAlwaysAuthorization()
+        
+        Singleton.sharedInstance.dispositivosBluetooth?.delegate = self
+        //let timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(MapKitVC.readValue), userInfo: nil, repeats: true)
+        //timer.fire()
+    }
+    
+    func retornaBluetooth(retorno: String) {
+        var x = false
+        x = retorno.containsString("ALT")
+        var y = false
+        y = retorno.containsString("TEMP")
+        
+        if x {
+            let alerta = CLLocationCoordinate2DMake((locationManager.location?.coordinate.latitude)!, (locationManager.location?.coordinate.longitude)!)
+            // Drop a pin
+            let dropPin = MKPointAnnotation()
+            
+            dropPin.coordinate = alerta
+            dropPin.title = "Cuidado, buraco na pista!"
+            mapView.addAnnotation(dropPin)
+        }
+        
+        if y {
+            self.temperatura.text = retorno
+            print("Temperatura: \(retorno)")
+        }
+        
     }
     
     
@@ -99,23 +132,34 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             // authorized location status when app is in use; update current location
             locationManager.startUpdatingLocation()
             // implement additional logic if needed...
+            
+            Singleton.sharedInstance.pessoaAtual?.latitude = manager.location?.coordinate.latitude
+            Singleton.sharedInstance.pessoaAtual?.longitude = manager.location?.coordinate.longitude
         }
         // implement logic for other status values if needed...
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //
-        //        if (s.first as? CLLocation) != nil {
-        //            // implement logic upon location change and stop updating location until it is subsequently updated
-        //            locationManager.stopUpdatingLocation()
-        //        }
+        let distanceSpan:Double = 2000
+        
+        if let mapView = self.mapView {
+            let region = MKCoordinateRegionMakeWithDistance(locations[0].coordinate, distanceSpan, distanceSpan)
+            mapView.setRegion(region, animated: true)
+            
+            
+            
+            //
+            //        if (s.first as? CLLocation) != nil {
+            //            // implement logic upon location change and stop updating location until it is subsequently updated
+            //            locationManager.stopUpdatingLocation()
+            //        }
+        }
     }
-    
-//    func mapView(mapView: MKMapView, _rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-//        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
-//        renderer.strokeColor = UIColor.blueColor()
-//        return renderer
-//    }
+    //    func mapView(mapView: MKMapView, _rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    //        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+    //        renderer.strokeColor = UIColor.blueColor()
+    //        return renderer
+    //    }
     /*........*/
     
     
@@ -154,20 +198,74 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     }
     
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        var post = Post()
+        
+        
         switch index {
         case 0:
             performSegueWithIdentifier("SendAlertVC", sender: self)
         case 1:
-            DevicesVC.writeValue("NOT+1/r/n")
+            post.titulo = ""
+            post.pessoaId = Singleton.sharedInstance.pessoaAtual?.objectId
+            post.latitude = locationManager.location?.coordinate.latitude
+            post.longitude = locationManager.location?.coordinate.longitude
+            post.pessoaNome = "risco"
+            DevicesVC.writeValue("RISK/r/n")
+
+            PostController.insertPost(post) { (resp:String?) in
+                print(resp)
+                DevicesVC.writeValue("DIR+UP/r/n")
+                //alertSucess("Enviado feed com sucesso", description: "Enviado")
+            }
         case 2:
-            DevicesVC.writeValue("NOT+1/r/n")
+            post.titulo = ""
+            post.pessoaId = Singleton.sharedInstance.pessoaAtual?.objectId
+            post.latitude = locationManager.location?.coordinate.latitude
+            post.longitude = locationManager.location?.coordinate.longitude
+            post.pessoaNome = "transito"
+            DevicesVC.writeValue("DIR+LEFT/r/n")
+
+            PostController.insertPost(post) { (resp:String?) in
+                print(resp)
+                DevicesVC.writeValue("DIR+LEFT/r/n")
+                //alertSucess("Enviado risco com sucesso", description: "Enviado")
+            }
+            
         case 3:
-            DevicesVC.writeValue("NOT+1/r/n")
+            post.titulo = ""
+            post.pessoaId = Singleton.sharedInstance.pessoaAtual?.objectId
+            post.latitude = locationManager.location?.coordinate.latitude
+            post.longitude = locationManager.location?.coordinate.longitude
+            post.pessoaNome = "ladeira"
+            DevicesVC.writeValue("DIR+RIGHT/r/n")
+
+            PostController.insertPost(post) { (resp:String?) in
+                print(resp)
+                DevicesVC.writeValue("DIR+RIGHT/r/n")
+                //alertSucess("Enviado transito com sucesso", description: "Enviado")
+            }
+            
         case 4:
-            DevicesVC.writeValue("NOT+1/r/n")
+            
+            post.titulo = ""
+            post.pessoaId = Singleton.sharedInstance.pessoaAtual?.objectId
+            post.latitude = locationManager.location?.coordinate.latitude
+            post.longitude = locationManager.location?.coordinate.longitude
+            post.pessoaNome = "buraco"
+            DevicesVC.writeValue("HOLE/r/n")
+
+            PostController.insertPost(post) { (resp:String?) in
+                print(resp)
+                DevicesVC.writeValue("HOLE/r/n")
+                //alertSucess("Enviado transito com sucesso", description: "Enviado")
+            }
+            
         default:
             print("Error")
         }
+        
+        Singleton.sharedInstance.pessoaAtual?.latitude = post.latitude
+        Singleton.sharedInstance.pessoaAtual?.longitude = post.longitude
     }
     
     func didSelectLiquidFloatingActionButton(isOpening: Bool) {
@@ -188,6 +286,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func desconectou() {
+        print("desc")
     }
     
     /**
@@ -216,7 +318,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         
         self.pinAnnotation = PinAnnotation()
         self.pinAnnotation.setCoordinate(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-        self.pinAnnotation.title = "Endereço a ser salvo"
+        self.pinAnnotation.title = "Destino"
         
         self.mapView.addAnnotation(self.pinAnnotation)
         self.mapView.selectAnnotation(self.pinAnnotation, animated: true)
@@ -227,6 +329,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
      */
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is PinAnnotation {
+            
             let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
             pinAnnotationView.pinTintColor = UIColor(red: 99/255, green: 71/255, blue: 92/255, alpha: 0.75)
             pinAnnotationView.draggable = true
@@ -256,6 +359,9 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         request!.requestsAlternateRoutes = true
         request!.transportType = .Walking
         
+        
+        var r = Rota()
+        
         let directions = MKDirections(request: request!)
         
         directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
@@ -263,19 +369,37 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             
             for route in unwrappedResponse.routes {
                 self.myRoute = response!.routes[0]
+                
+                print(self.myRoute)
+                
+                r.arrayRetas.append([(self.myRoute?.polyline.coordinate.latitude)!, route.polyline.coordinate.longitude])
+                r.personId = Singleton.sharedInstance.pessoaAtual?.objectId
+                r.nomePessoa = Singleton.sharedInstance.pessoaAtual?.name
+                r.tempo = "2016-04-13T06:51:00.000Z"
+                r.kmRota = route.distance
+                
                 self.mapView.addOverlay((self.myRoute?.polyline)!)
                 self.mapView.addOverlay(route.polyline)
+                
+                print(route.polyline)
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                
+                for step in route.steps {
+                    self.passos?.append(step.instructions)
+                    self.distancias?.append(step.distance)
+                    print(step.instructions)
+                }
+                
             }
         }
         
-//        var directions = MKDirections(request: request!)
-//        directions.calculateDirectionsWithCompletionHandler { (response:MKDirectionsResponse!, error: NSError!) -> Void in
-//            if error == nil {
-//                self.myRoute = response.routes[0] as? MKRoute
-//                self.myMap.addOverlay(self.myRoute?.polyline)
-//            }
-//        }
+        //        var directions = MKDirections(request: request!)
+        //        directions.calculateDirectionsWithCompletionHandler { (response:MKDirectionsResponse!, error: NSError!) -> Void in
+        //            if error == nil {
+        //                self.myRoute = response.routes[0] as? MKRoute
+        //                self.myMap.addOverlay(self.myRoute?.polyline)
+        //            }
+        //        }
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {

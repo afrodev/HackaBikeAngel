@@ -13,6 +13,8 @@ class Singleton {
     var floatingActionButton: LiquidFloatingActionButton!
     var deviceAtual: String?
     var dispositivosBluetooth: DevicesVC?
+    var pessoaAtual: Personn?
+
     
     class var sharedInstance: Singleton {
         struct Static {

@@ -51,6 +51,8 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         else {
             if result.grantedPermissions.contains("email") {
                 // Do work
+                returnUserData()
+
             }
         }
           performSegueWithIdentifier("DevicesVC", sender: self)
@@ -63,21 +65,45 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func returnUserData() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        /* Coloco os campos que eu quero extrair da conta do facebook do usuário */
+        let fbRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email, name"])
+        
+        fbRequest.startWithCompletionHandler({ (FBSDKGraphRequestConnection, result, error) -> Void in
             
-            if ((error) != nil) {
-                // Process error
-                print("Error: \(error)")
-            }
-            else {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
+            if (error == nil && result != nil) {
+                /* Recebo a resposta em forma de dicionário */
+                let facebookData = result as! NSDictionary
+                
+                /* Pego o que as informações que pedi em cada dicionario */
+                let userEmail = (facebookData.objectForKey("email") as! String)
+                let name = (facebookData.objectForKey("name") as! String)
+                
+                let p = Personn()
+                p.name = name
+                p.urlPhoto = ""
+                p.longitude = 0
+                p.latitude = 0
+                p.hiddenPerson = true
+                
+                PersonnController.insertPerson(p) { (str:String?) in
+                    p.objectId = str
+                    Singleton.sharedInstance.pessoaAtual = p
+                    
+                    
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject("\(userEmail)", forKey: "userEmail")
+                    defaults.setObject("\(name)", forKey: "userName")
+                    print(str)
+                }
+                
+                
+                print("\(userEmail) - \(name)")
+                
+            } else {
+                print(">> Erro ao tentar recuperar informações do facebook.")
             }
         })
+
     }
     
     

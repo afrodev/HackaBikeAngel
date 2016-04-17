@@ -51,6 +51,13 @@
 		8B5DA5001CC327E1008F00B0 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5DA4FF1CC327E1008F00B0 /* CustomCell.swift */; };
 		8BEBC3B71CC2F9C80060DC1C /* MapKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */; };
 		B355EED9FB2F92AC97B545A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D2FC5F8022E4EF5E5EE896 /* Pods.framework */; };
+		F27D4CA51CC3B15F0087FE0A /* PersonnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CA11CC3B15F0087FE0A /* PersonnController.swift */; };
+		F27D4CA61CC3B15F0087FE0A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CA21CC3B15F0087FE0A /* Constants.swift */; };
+		F27D4CA71CC3B15F0087FE0A /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CA31CC3B15F0087FE0A /* PostController.swift */; };
+		F27D4CA81CC3B15F0087FE0A /* RotaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CA41CC3B15F0087FE0A /* RotaController.swift */; };
+		F27D4CAC1CC3B1700087FE0A /* Personn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CA91CC3B1700087FE0A /* Personn.swift */; };
+		F27D4CAD1CC3B1700087FE0A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CAA1CC3B1700087FE0A /* Post.swift */; };
+		F27D4CAE1CC3B1700087FE0A /* Rota.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D4CAB1CC3B1700087FE0A /* Rota.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +120,13 @@
 		8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapKitVC.swift; sourceTree = "<group>"; };
 		A2D2FC5F8022E4EF5E5EE896 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF620B490F7FA0037A673A12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F27D4CA11CC3B15F0087FE0A /* PersonnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonnController.swift; sourceTree = "<group>"; };
+		F27D4CA21CC3B15F0087FE0A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F27D4CA31CC3B15F0087FE0A /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		F27D4CA41CC3B15F0087FE0A /* RotaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotaController.swift; sourceTree = "<group>"; };
+		F27D4CA91CC3B1700087FE0A /* Personn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Personn.swift; sourceTree = "<group>"; };
+		F27D4CAA1CC3B1700087FE0A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F27D4CAB1CC3B1700087FE0A /* Rota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rota.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,12 +310,35 @@
 		8B5AD94F1CC2F36A00770EA0 /* HackaBike */ = {
 			isa = PBXGroup;
 			children = (
+				F27D4CAF1CC3B1780087FE0A /* model */,
+				F27D4CA01CC3B1550087FE0A /* controller */,
 				118B70DA1CC31D2A00AA53B2 /* Components */,
 				118B70B71CC3055E00AA53B2 /* Frameworks */,
 				118B70B61CC3054800AA53B2 /* ViewControllers */,
 				118B70B51CC3051800AA53B2 /* Resources */,
 			);
 			path = HackaBike;
+			sourceTree = "<group>";
+		};
+		F27D4CA01CC3B1550087FE0A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				F27D4CA11CC3B15F0087FE0A /* PersonnController.swift */,
+				F27D4CA21CC3B15F0087FE0A /* Constants.swift */,
+				F27D4CA31CC3B15F0087FE0A /* PostController.swift */,
+				F27D4CA41CC3B15F0087FE0A /* RotaController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		F27D4CAF1CC3B1780087FE0A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F27D4CA91CC3B1700087FE0A /* Personn.swift */,
+				F27D4CAA1CC3B1700087FE0A /* Post.swift */,
+				F27D4CAB1CC3B1700087FE0A /* Rota.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				118B70AF1CC2FFAB00AA53B2 /* PinAnnotation.swift in Sources */,
+				F27D4CA61CC3B15F0087FE0A /* Constants.swift in Sources */,
 				11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */,
 				8B5DA5001CC327E1008F00B0 /* CustomCell.swift in Sources */,
 				11D169A11CC2FE7500975011 /* UIImage+ImageEffects.m in Sources */,
@@ -446,6 +484,7 @@
 				118B70C01CC3085B00AA53B2 /* LiquittableCircle.swift in Sources */,
 				118B70D71CC3184D00AA53B2 /* Navigator.swift in Sources */,
 				118B70C71CC3085B00AA53B2 /* LiquidUtil.swift in Sources */,
+				F27D4CA51CC3B15F0087FE0A /* PersonnController.swift in Sources */,
 				118B70C21CC3085B00AA53B2 /* UIColorEx.swift in Sources */,
 				118B70C61CC3085B00AA53B2 /* LiquidFloatingActionButton.swift in Sources */,
 				118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */,
@@ -454,6 +493,8 @@
 				8B5DA4FE1CC327D9008F00B0 /* DevicesVC.swift in Sources */,
 				11C7AC1A1CC38D7000BD4937 /* Alert.swift in Sources */,
 				11C7AC1B1CC38D7000BD4937 /* TWMessageBarManager.m in Sources */,
+				F27D4CAE1CC3B1700087FE0A /* Rota.swift in Sources */,
+				F27D4CA81CC3B15F0087FE0A /* RotaController.swift in Sources */,
 				8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */,
 				118B70E11CC3241200AA53B2 /* InitVC.swift in Sources */,
 				11D169991CC2FE7500975011 /* GooglePlacesTableViewCell.swift in Sources */,
@@ -461,9 +502,12 @@
 				11D1699C1CC2FE7500975011 /* SCLAlertViewResponder.m in Sources */,
 				8BEBC3B71CC2F9C80060DC1C /* MapKitVC.swift in Sources */,
 				11D1699E1CC2FE7500975011 /* SCLButton.m in Sources */,
+				F27D4CAD1CC3B1700087FE0A /* Post.swift in Sources */,
 				11D1699B1CC2FE7500975011 /* SCLAlertView.m in Sources */,
 				118B70C51CC3085B00AA53B2 /* CGRectEx2.swift in Sources */,
+				F27D4CAC1CC3B1700087FE0A /* Personn.swift in Sources */,
 				11D1699A1CC2FE7500975011 /* JSSAlertView.swift in Sources */,
+				F27D4CA71CC3B15F0087FE0A /* PostController.swift in Sources */,
 				118B70D91CC31A9B00AA53B2 /* StyleNavigator.swift in Sources */,
 				118B70CA1CC309DB00AA53B2 /* Singleton.swift in Sources */,
 				118B70C11CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift in Sources */,

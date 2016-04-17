@@ -215,10 +215,12 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
                 //Pega a String e manda para o arduino
                 peripheralDevice.writeValue(data!, forCharacteristic: deviceCharacteristics, type: CBCharacteristicWriteType.WithResponse)
                 
+                
             }
         }
+        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

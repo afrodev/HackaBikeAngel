@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OcS-pM-W1z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OcS-pM-W1z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -181,16 +181,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sidebutton_rota" translatesAutoresizingMaskIntoConstraints="NO" id="WDg-XX-gci">
                                 <rect key="frame" x="36" y="598" width="16" height="21"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHH-hx-s9v">
+                                <rect key="frame" x="105" y="20" width="165" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AHH-hx-s9v" firstAttribute="top" secondItem="h9a-7D-PQp" secondAttribute="bottom" id="7qS-bI-lu5"/>
                             <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="IRd-sD-cg3" secondAttribute="bottom" constant="30" id="JqR-Ww-eZr"/>
                             <constraint firstItem="8ca-li-A5m" firstAttribute="leading" secondItem="usD-GP-CZb" secondAttribute="leading" id="KhR-xJ-par"/>
+                            <constraint firstItem="AHH-hx-s9v" firstAttribute="leading" secondItem="usD-GP-CZb" secondAttribute="leadingMargin" constant="89" id="Mug-Yi-LsW"/>
                             <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="8ca-li-A5m" secondAttribute="bottom" id="N6M-cc-F7f"/>
                             <constraint firstItem="8ca-li-A5m" firstAttribute="top" secondItem="h9a-7D-PQp" secondAttribute="bottom" id="SBX-fU-Jx6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AHH-hx-s9v" secondAttribute="trailing" constant="89" id="Xrj-HU-S0F"/>
                             <constraint firstItem="8ca-li-A5m" firstAttribute="top" secondItem="usD-GP-CZb" secondAttribute="topMargin" id="Zrf-7Q-AlZ"/>
                             <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="Jp5-LZ-upc" secondAttribute="bottom" constant="30" id="lci-Jc-f0W"/>
                             <constraint firstAttribute="trailing" secondItem="8ca-li-A5m" secondAttribute="trailing" id="nKx-e5-xGP"/>
+                            <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="AHH-hx-s9v" secondAttribute="bottom" constant="626" id="p2u-aJ-F86"/>
                             <constraint firstItem="IRd-sD-cg3" firstAttribute="leading" secondItem="usD-GP-CZb" secondAttribute="leadingMargin" id="q5b-3y-jOk"/>
                             <constraint firstItem="Jp5-LZ-upc" firstAttribute="trailing" secondItem="usD-GP-CZb" secondAttribute="trailingMargin" id="w0k-WL-9ex"/>
                         </constraints>
@@ -207,6 +217,7 @@
                         <outlet property="dirButton" destination="Jp5-LZ-upc" id="9HW-9Z-JqK"/>
                         <outlet property="esqButton" destination="IRd-sD-cg3" id="hlb-L1-d0g"/>
                         <outlet property="mapView" destination="8ca-li-A5m" id="p60-Z3-NZu"/>
+                        <outlet property="temperatura" destination="AHH-hx-s9v" id="Sk6-Of-LWY"/>
                         <segue destination="h0F-Go-9zk" kind="show" identifier="SendAlertVC" id="5iS-4n-gtc"/>
                     </connections>
                 </viewController>

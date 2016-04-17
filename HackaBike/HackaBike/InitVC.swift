@@ -10,9 +10,10 @@ import UIKit
 
 class InitVC: UIViewController {
 
+    @IBOutlet weak var play: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        performSegueWithIdentifier("LoginVC", sender: self);
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +22,9 @@ class InitVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func playVideo(sender: AnyObject) {
+        performSegueWithIdentifier("LoginVC", sender: self);
+    }
 
     /*
     // MARK: - Navigation

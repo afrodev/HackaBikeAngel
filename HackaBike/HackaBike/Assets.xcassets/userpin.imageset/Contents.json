@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "userpin.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "userpin@2x.png",
       "scale" : "2x"
     },
     {

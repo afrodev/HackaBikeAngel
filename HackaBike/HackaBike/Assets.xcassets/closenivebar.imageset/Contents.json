@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "closenivebar.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "closenivebar@2x.png",
       "scale" : "2x"
     },
     {

@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "sidebutton_rota.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "sidebutton_rota@2x.png",
       "scale" : "2x"
     },
     {

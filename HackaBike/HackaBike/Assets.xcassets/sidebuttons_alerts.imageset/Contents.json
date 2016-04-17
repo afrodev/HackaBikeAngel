@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "sidebuttons_alerts.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "sidebuttons_alerts@2x.png",
       "scale" : "2x"
     },
     {

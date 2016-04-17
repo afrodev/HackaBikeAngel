@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "icone_sibebuttons_traffic.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icone_sibebuttons_traffic@2x.png",
       "scale" : "2x"
     },
     {

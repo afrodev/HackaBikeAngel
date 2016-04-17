@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Lugariniciarrota.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Lugariniciarrota@2x.png",
       "scale" : "2x"
     },
     {

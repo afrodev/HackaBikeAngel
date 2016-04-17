@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "fblogin.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fblogin@2x.png",
       "scale" : "2x"
     },
     {

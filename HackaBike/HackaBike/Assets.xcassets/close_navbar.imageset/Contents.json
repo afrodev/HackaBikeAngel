@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "close_navbar.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "close_navbar@2x.png",
       "scale" : "2x"
     },
     {

@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "bicicletariapin.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "bicicletariapin@2x.png",
       "scale" : "2x"
     },
     {

@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "fbbuttonblue.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fbbuttonblue@2x.png",
       "scale" : "2x"
     },
     {

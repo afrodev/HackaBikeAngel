@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "icone_sibebuttons_ladeira.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icone_sibebuttons_ladeira@2x.png",
       "scale" : "2x"
     },
     {

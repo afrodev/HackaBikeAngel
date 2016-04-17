@@ -79,7 +79,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-sD-cg3">
                                 <rect key="frame" x="16" y="581" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="Ap0-Uo-EXj"/>
                                     <constraint firstAttribute="height" constant="56" id="R96-dq-kJu"/>
@@ -105,6 +105,9 @@
                                     <segue destination="h0F-Go-9zk" kind="embed" id="1jg-AQ-RE6"/>
                                 </connections>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sidebutton_rota" translatesAutoresizingMaskIntoConstraints="NO" id="WDg-XX-gci">
+                                <rect key="frame" x="36" y="598" width="16" height="21"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -279,6 +282,10 @@
         <scene sceneID="32y-Jy-d03">
             <objects>
                 <viewController id="h0F-Go-9zk" customClass="SendAlertVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x9u-XU-g85"/>
+                        <viewControllerLayoutGuide type="bottom" id="0M0-qD-FlA"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Ay-oT-G0x">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -424,5 +431,6 @@
         <image name="background-20" width="3396" height="6040"/>
         <image name="conectar" width="3396" height="6040"/>
         <image name="message" width="56" height="55"/>
+        <image name="sidebutton_rota" width="11" height="14"/>
     </resources>
 </document>

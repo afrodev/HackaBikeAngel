@@ -27,6 +27,8 @@
 		118B70E11CC3241200AA53B2 /* InitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70E01CC3241200AA53B2 /* InitVC.swift */; };
 		118B70E31CC33E7F00AA53B2 /* SendAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70E21CC33E7F00AA53B2 /* SendAlertVC.swift */; };
 		118B70E91CC35AA900AA53B2 /* AlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70E81CC35AA900AA53B2 /* AlertCell.swift */; };
+		11C7AC1A1CC38D7000BD4937 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C7AC171CC38D7000BD4937 /* Alert.swift */; };
+		11C7AC1B1CC38D7000BD4937 /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C7AC191CC38D7000BD4937 /* TWMessageBarManager.m */; };
 		11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */; };
 		11D169971CC2FE7500975011 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */; };
 		11D169981CC2FE7500975011 /* GooglePlacesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169841CC2FE7500975011 /* GooglePlacesCell.xib */; };
@@ -71,6 +73,9 @@
 		118B70E01CC3241200AA53B2 /* InitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitVC.swift; sourceTree = "<group>"; };
 		118B70E21CC33E7F00AA53B2 /* SendAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendAlertVC.swift; sourceTree = "<group>"; };
 		118B70E81CC35AA900AA53B2 /* AlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCell.swift; sourceTree = "<group>"; };
+		11C7AC171CC38D7000BD4937 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		11C7AC181CC38D7000BD4937 /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
+		11C7AC191CC38D7000BD4937 /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
 		11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesAutocomplete.h; sourceTree = "<group>"; };
 		11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
@@ -239,6 +244,9 @@
 		118B70DA1CC31D2A00AA53B2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				11C7AC171CC38D7000BD4937 /* Alert.swift */,
+				11C7AC181CC38D7000BD4937 /* TWMessageBarManager.h */,
+				11C7AC191CC38D7000BD4937 /* TWMessageBarManager.m */,
 				118B70C91CC309DB00AA53B2 /* Singleton.swift */,
 				118B70D61CC3184D00AA53B2 /* Navigator.swift */,
 				118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */,
@@ -440,6 +448,8 @@
 				8B5AD9511CC2F36A00770EA0 /* AppDelegate.swift in Sources */,
 				118B70E91CC35AA900AA53B2 /* AlertCell.swift in Sources */,
 				8B5DA4FE1CC327D9008F00B0 /* DevicesVC.swift in Sources */,
+				11C7AC1A1CC38D7000BD4937 /* Alert.swift in Sources */,
+				11C7AC1B1CC38D7000BD4937 /* TWMessageBarManager.m in Sources */,
 				8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */,
 				118B70E11CC3241200AA53B2 /* InitVC.swift in Sources */,
 				11D169991CC2FE7500975011 /* GooglePlacesTableViewCell.swift in Sources */,

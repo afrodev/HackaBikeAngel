@@ -46,7 +46,8 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     @IBAction func send(sender: AnyObject) {
-        //addd txt na table
+        //aaMss em algum lugar pra aparecer dps na table, precisa dar um reload table pra atualizar em tempo real
+        alertSucess("Enviado com sucesso!", description: "Sua notificação foi enviada com sucesso.")
     }
     
     /*

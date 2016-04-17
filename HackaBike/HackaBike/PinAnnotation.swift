@@ -13,6 +13,8 @@ import UIKit
 class PinAnnotation : NSObject, MKAnnotation {
     var title: String? = ""
     var subtitle: String? = ""
+    var request:MKDirectionsRequest?
+    var locationManager:CLLocationManager!
     
     private var coord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var coordinate: CLLocationCoordinate2D {
@@ -24,4 +26,5 @@ class PinAnnotation : NSObject, MKAnnotation {
     func setCoordinate(newCoordinate: CLLocationCoordinate2D) {
         self.coord = newCoordinate
     }
+    
 }

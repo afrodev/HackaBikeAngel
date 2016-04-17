@@ -17,6 +17,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     @IBOutlet weak var dirButton: UIView!
     @IBOutlet weak var container: UIView!
     
+      var myRoute : MKRoute?
     // Distancia inicial de abrangencia (Zoom)
     let regionRadius: CLLocationDistance = 1000
     
@@ -41,7 +42,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     var cells: [LiquidFloatingCell] = []
     var liquidButtonBackground = UIView()
     var floatingActionButton: LiquidFloatingActionButton!
-
+    
     func animationUp() {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(MapKitVC.handleTap(_:)))
         self.view.addGestureRecognizer(tap)
@@ -53,7 +54,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         })
         
     }
-
+    
     func animationDown() {
         UIView.animateWithDuration(0.5, delay: 0.3, options: [], animations: {
             self.container.center.y += self.view.bounds.height }, completion: { (value: Bool) in
@@ -61,11 +62,11 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
                 self.view.sendSubviewToBack(self.container)
         })
     }
-
+    
     func handleTap(recognizer: UITapGestureRecognizer) {
         animationDown()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
@@ -108,8 +109,8 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         liquidButtonBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.7)
         liquidButtonBackground.bounds = UIScreen.mainScreen().bounds
         liquidButtonBackground.alpha = 0.7
-    
-
+        
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -135,15 +136,33 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         //        }
     }
     
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
-        renderer.strokeColor = UIColor.blueColor()
-        return renderer
-    }
-    
+//    func mapView(mapView: MKMapView, _rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+//        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+//        renderer.strokeColor = UIColor.blueColor()
+//        return renderer
+//    }
     /*........*/
     
-
+    
+    
+    //    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    //        request = MKDirectionsRequest()
+    //        request!.source = MKMapItem(placemark: MKPlacemark(coordinate: (locationManager.location?.coordinate)!, addressDictionary: nil))
+    //        request!.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667), addressDictionary: nil))
+    //        request!.requestsAlternateRoutes = true
+    //        request!.transportType = .Automobile
+    //
+    //        let directions = MKDirections(request: request!)
+    //
+    //        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
+    //            guard let unwrappedResponse = response else { return }
+    //
+    //            for route in unwrappedResponse.routes {
+    //                self.mapView.addOverlay(route.polyline)
+    //                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+    //            }
+    //        }
+    //    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -175,18 +194,18 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             print("Error")
         }
     }
-
+    
     func didSelectLiquidFloatingActionButton(isOpening: Bool) {
         if isOpening {
             self.view.insertSubview(liquidButtonBackground, belowSubview: Singleton.sharedInstance.floatingActionButton)
             UIView.animateWithDuration(0.2, animations: {self.liquidButtonBackground.alpha = 0.7}, completion: nil)
         } else {
             UIView.animateWithDuration(0.2, animations: {self.liquidButtonBackground.alpha = 0.0}, completion: {(value: Bool) in
-                                        self.liquidButtonBackground.removeFromSuperview()
+                self.liquidButtonBackground.removeFromSuperview()
             })
         }
     }
-
+    
     /**
      Metodo helper, que serve pra centralizar o mapa na posicao selecionada
      */
@@ -243,6 +262,55 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         return nil
     }
     
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let capital = view.annotation as! PinAnnotation
+        let placeName = capital.title
+        let placeInfo = "EITA LELELE"
+        
+        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(ac, animated: true, completion: nil)
+    }
+    
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        print("Carajo")
+        request = MKDirectionsRequest()
+        request!.source = MKMapItem(placemark: MKPlacemark(coordinate: (locationManager.location?.coordinate)!, addressDictionary: nil))
+        request!.destination = MKMapItem(placemark: MKPlacemark(coordinate: view.annotation!.coordinate, addressDictionary: nil))
+        request!.requestsAlternateRoutes = true
+        request!.transportType = .Walking
+        
+        let directions = MKDirections(request: request!)
+        
+        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            
+            for route in unwrappedResponse.routes {
+                self.myRoute = response!.routes[0]
+                self.mapView.addOverlay((self.myRoute?.polyline)!)
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
+        
+//        var directions = MKDirections(request: request!)
+//        directions.calculateDirectionsWithCompletionHandler { (response:MKDirectionsResponse!, error: NSError!) -> Void in
+//            if error == nil {
+//                self.myRoute = response.routes[0] as? MKRoute
+//                self.myMap.addOverlay(self.myRoute?.polyline)
+//            }
+//        }
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let myLineRenderer = MKPolylineRenderer(polyline: (myRoute?.polyline)!)
+        myLineRenderer.strokeColor = UIColor.redColor()
+        myLineRenderer.lineWidth = 3
+        return myLineRenderer
+    }
+    
     @IBAction func changeAddress(sender: AnyObject) {
         self.userNumber = nil
         
@@ -254,7 +322,6 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         
         
         /******************** ROTA *********************/
-        
         // Apresenta a view controller
         presentViewController(gpaViewController, animated: true, completion: nil)
     }
@@ -324,5 +391,4 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         }
         return screenSize
     }
-    
 }

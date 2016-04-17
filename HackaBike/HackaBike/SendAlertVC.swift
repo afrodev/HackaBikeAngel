@@ -20,6 +20,15 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.tableAlert.dataSource = self
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.titleLabel?.resignFirstResponder()
+        self.localLabel?.resignFirstResponder()
+    }
+    
+    @IBAction func textFieldDidReturn(textField: UITextField!) {
+        textField.resignFirstResponder()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -47,7 +56,6 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBAction func send(sender: AnyObject) {
         //aaMss em algum lugar pra aparecer dps na table, precisa dar um reload table pra atualizar em tempo real
-        alertSucess("Enviado com sucesso!", description: "Sua notificação foi enviada com sucesso.")
     }
     
     /*

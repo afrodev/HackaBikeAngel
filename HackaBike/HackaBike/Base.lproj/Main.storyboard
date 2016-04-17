@@ -37,7 +37,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorialvideo" translatesAutoresizingMaskIntoConstraints="NO" id="v88-lX-hSL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M A G R E L A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynj-rX-ia2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M  A  G  R  E  L  A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynj-rX-ia2">
                                 <rect key="frame" x="16" y="120" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1Ui-cP-Xkd"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="v88-lX-hSL" firstAttribute="leading" secondItem="ozz-9e-5bB" secondAttribute="leading" id="5xn-SP-10t"/>
                             <constraint firstItem="Ynj-rX-ia2" firstAttribute="leading" secondItem="ozz-9e-5bB" secondAttribute="leadingMargin" id="7U3-Ro-6iH"/>
@@ -161,7 +161,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-sD-cg3">
                                 <rect key="frame" x="16" y="581" width="56" height="56"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="Ap0-Uo-EXj"/>
                                     <constraint firstAttribute="height" constant="56" id="R96-dq-kJu"/>
@@ -533,11 +533,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="local" destination="z2i-LP-mZy" id="sHg-b4-u6O"/>
-                        <outlet property="localLabel" destination="z2i-LP-mZy" id="LpJ-Er-LMY"/>
+                        <outlet property="localLabel" destination="z2i-LP-mZy" id="1FE-aa-NYs"/>
                         <outlet property="tableAlert" destination="1hq-0j-vNz" id="IG5-Vx-Jw9"/>
-                        <outlet property="title" destination="fjO-hm-Iv9" id="udh-yx-IDZ"/>
-                        <outlet property="titleLabel" destination="fjO-hm-Iv9" id="pkl-vE-PuU"/>
+                        <outlet property="titleLabel" destination="fjO-hm-Iv9" id="jRT-Dd-NCp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9H8-OD-DhV" userLabel="First Responder" sceneMemberID="firstResponder"/>

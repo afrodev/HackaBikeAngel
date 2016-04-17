@@ -7,5 +7,6 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "SCLAlertView.h"
+#import "TWMessageBarManager.h"
 
 #endif

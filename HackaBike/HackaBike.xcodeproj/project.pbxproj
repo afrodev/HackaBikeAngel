@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116743DE1CC391A600175A96 /* ResponsiveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116743DD1CC391A600175A96 /* ResponsiveTextField.swift */; };
 		118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */; };
 		118B70AF1CC2FFAB00AA53B2 /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */; };
 		118B70B41CC304AF00AA53B2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70B31CC304AF00AA53B2 /* LoginVC.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116743DD1CC391A600175A96 /* ResponsiveTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextField.swift; sourceTree = "<group>"; };
 		118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
 		118B70B31CC304AF00AA53B2 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				118B70C91CC309DB00AA53B2 /* Singleton.swift */,
 				118B70D61CC3184D00AA53B2 /* Navigator.swift */,
 				118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */,
+				116743DD1CC391A600175A96 /* ResponsiveTextField.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				118B70CD1CC3109500AA53B2 /* IndexOneVC.swift in Sources */,
 				11D169A01CC2FE7500975011 /* SCLTimerDisplay.m in Sources */,
 				11D1699F1CC2FE7500975011 /* SCLTextView.m in Sources */,
+				116743DE1CC391A600175A96 /* ResponsiveTextField.swift in Sources */,
 				118B70C01CC3085B00AA53B2 /* LiquittableCircle.swift in Sources */,
 				118B70D71CC3184D00AA53B2 /* Navigator.swift in Sources */,
 				118B70C71CC3085B00AA53B2 /* LiquidUtil.swift in Sources */,

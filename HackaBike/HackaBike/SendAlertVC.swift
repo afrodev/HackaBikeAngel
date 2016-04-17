@@ -12,15 +12,10 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet weak var tableAlert: UITableView!
     
-    var data = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for _ in 0...10 {
-            data.append("teste")
-        }
-        
+        self.tableAlert.delegate = self
+        self.tableAlert.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,18 +23,17 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // Dispose of any resources that can be recreated.
     }
     
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count;
+        return 10
     }
         
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("history", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.text = "testando"
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AlertCell
+        cell.labelCell.text = "testando"
         return cell
     }
 

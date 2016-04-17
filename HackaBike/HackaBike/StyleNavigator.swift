@@ -12,7 +12,7 @@ class StyleNavigator: NSObject {
 
     func custom(navigator:UINavigationController) -> Void {
         navigator.navigationBar.tintColor = UIColor(red: 31/255, green: 25/255, blue: 36/255, alpha: 1)
-        navigator.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "FiraSans-Light", size: 21)!]
+        navigator.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Montserrat-Bold", size: 21)!]
     }
  
     func hidden(navigator:UINavigationController) -> Void {

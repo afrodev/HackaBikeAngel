@@ -16,4 +16,9 @@ class Navigator: NSObject {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func present(identify:String, navigation: UINavigationController) -> Void {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier(identify)
+        navigation.presentViewController(vc, animated: true, completion: nil)
+    }
 }

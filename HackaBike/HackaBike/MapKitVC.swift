@@ -42,14 +42,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        StyleNavigator().custom(self.navigationController!)
-        StyleNavigator().hidden(self.navigationController!)
-        
         gpaViewController.gpaViewController.delegate = self
         
         // Configurando a mapview
         mapView.delegate = self
-        
         
         blurMapBackground.frame.size = screenSize()
         blurMapBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.8)
@@ -85,6 +81,11 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         liquidButtonBackground.bounds = UIScreen.mainScreen().bounds
         liquidButtonBackground.alpha = 0.7
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // Usado para criar as celulas do botão flutuante

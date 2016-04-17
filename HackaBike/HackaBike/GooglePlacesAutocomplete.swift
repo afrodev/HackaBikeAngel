@@ -338,8 +338,6 @@ public class GooglePlacesAutocompleteContainer: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        StyleNavigator().custom(self.navigationController!)
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GooglePlacesAutocompleteContainer.keyboardWasShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GooglePlacesAutocompleteContainer.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
@@ -353,7 +351,7 @@ public class GooglePlacesAutocompleteContainer: UIViewController {
         tableView.addGestureRecognizer(tapGestureDismiss)
         tableView.reloadData()
     }
-    
+        
     func keyboardWasShown(notification: NSNotification) {
         if isViewLoaded() && view.window != nil {
             let info: Dictionary = notification.userInfo!

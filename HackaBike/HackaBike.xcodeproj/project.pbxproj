@@ -25,6 +25,9 @@
 		118B70D31CC310E800AA53B2 /* IndexFourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D21CC310E800AA53B2 /* IndexFourVC.swift */; };
 		118B70D71CC3184D00AA53B2 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D61CC3184D00AA53B2 /* Navigator.swift */; };
 		118B70D91CC31A9B00AA53B2 /* StyleNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */; };
+		118B70DE1CC31EF500AA53B2 /* montserrat in Resources */ = {isa = PBXBuildFile; fileRef = 118B70DC1CC31EF500AA53B2 /* montserrat */; };
+		118B70DF1CC31EF500AA53B2 /* playfair-display in Resources */ = {isa = PBXBuildFile; fileRef = 118B70DD1CC31EF500AA53B2 /* playfair-display */; };
+		118B70E11CC3241200AA53B2 /* InitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70E01CC3241200AA53B2 /* InitVC.swift */; };
 		11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */; };
 		11D169971CC2FE7500975011 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */; };
 		11D169981CC2FE7500975011 /* GooglePlacesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169841CC2FE7500975011 /* GooglePlacesCell.xib */; };
@@ -65,6 +68,9 @@
 		118B70D21CC310E800AA53B2 /* IndexFourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexFourVC.swift; sourceTree = "<group>"; };
 		118B70D61CC3184D00AA53B2 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleNavigator.swift; sourceTree = "<group>"; };
+		118B70DC1CC31EF500AA53B2 /* montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = montserrat; sourceTree = "<group>"; };
+		118B70DD1CC31EF500AA53B2 /* playfair-display */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "playfair-display"; sourceTree = "<group>"; };
+		118B70E01CC3241200AA53B2 /* InitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitVC.swift; sourceTree = "<group>"; };
 		11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesAutocomplete.h; sourceTree = "<group>"; };
 		11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		118B70B51CC3051800AA53B2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				118B70DB1CC31EE400AA53B2 /* Font */,
 				8B5AD9541CC2F36A00770EA0 /* Main.storyboard */,
 				8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */,
 				8B5AD95C1CC2F36A00770EA0 /* LaunchScreen.storyboard */,
@@ -184,6 +191,7 @@
 				8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */,
 				118B70B31CC304AF00AA53B2 /* LoginVC.swift */,
 				8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */,
+				118B70E01CC3241200AA53B2 /* InitVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -233,6 +241,15 @@
 				118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		118B70DB1CC31EE400AA53B2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				118B70DC1CC31EF500AA53B2 /* montserrat */,
+				118B70DD1CC31EF500AA53B2 /* playfair-display */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		3C0193FA9E5FF0CB681BDCC5 /* Pods */ = {
@@ -336,9 +353,11 @@
 			files = (
 				11D169971CC2FE7500975011 /* GooglePlacesAutocomplete.xib in Resources */,
 				8B5AD95E1CC2F36A00770EA0 /* LaunchScreen.storyboard in Resources */,
+				118B70DF1CC31EF500AA53B2 /* playfair-display in Resources */,
 				8B5AD95B1CC2F36A00770EA0 /* Assets.xcassets in Resources */,
 				8B5AD9561CC2F36A00770EA0 /* Main.storyboard in Resources */,
 				11D169981CC2FE7500975011 /* GooglePlacesCell.xib in Resources */,
+				118B70DE1CC31EF500AA53B2 /* montserrat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +436,7 @@
 				118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */,
 				8B5AD9511CC2F36A00770EA0 /* AppDelegate.swift in Sources */,
 				8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */,
+				118B70E11CC3241200AA53B2 /* InitVC.swift in Sources */,
 				11D169991CC2FE7500975011 /* GooglePlacesTableViewCell.swift in Sources */,
 				11D1699D1CC2FE7500975011 /* SCLAlertViewStyleKit.m in Sources */,
 				11D1699C1CC2FE7500975011 /* SCLAlertViewResponder.m in Sources */,

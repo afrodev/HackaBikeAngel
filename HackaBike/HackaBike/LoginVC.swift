@@ -15,7 +15,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            performSegueWithIdentifier("MapKitVC", sender: self)
+            performSegueWithIdentifier("BleVC", sender: self)
         }
         else {
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
@@ -27,6 +27,11 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,14 +47,12 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
             // Handle cancellations
         }
         else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
             if result.grantedPermissions.contains("email") {
                 // Do work
             }
         }
         
-        performSegueWithIdentifier("MapKitVC", sender: self)
+        Navigator().present("MapKitVC", navigation: self.navigationController!)
         
     }
     

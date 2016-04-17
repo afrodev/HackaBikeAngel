@@ -24,4 +24,14 @@ class GooglePlacesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func favorites(sender: AnyObject) {
+        if self.favorite.tag == 0 {
+            self.favorite.setBackgroundImage(UIImage(named: "icone_estrelapreenchida"), forState: .Normal)
+            self.favorite.tag = 1
+        }
+        else {
+            self.favorite.setBackgroundImage(UIImage(named: "icone_estrelanaopreenchido"), forState: .Normal)
+            self.favorite.tag = 0
+        }
+    }
 }

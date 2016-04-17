@@ -9,7 +9,5 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
-    
-    @IBOutlet weak var deviceName: UILabel!
-    
+    @IBOutlet weak var deviceName: UILabel!    
 }

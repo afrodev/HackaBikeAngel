@@ -19,12 +19,10 @@ var devicesServices: CBService! // Servicos do que o dispositivo vai fazer ao se
 var deviceCharacteristics: CBCharacteristic! //Guarda informações importantes sobre o device que será conectado
 var abriuTela:Bool = false
 
-
 @objc protocol DispositivosBluetoothProtocol {
     func retornaBluetooth(retorno: String)
     func desconectou()
 }
-
 
 // é Importados todos os delegates para serem colocados na tableView
 class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
@@ -129,9 +127,6 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
                 navigationItem.title = "Connected to \(deviceName)"
             }
         }
-        
-        
-        
     }
     
     // Método sobrecarregado de periféricos
@@ -146,10 +141,7 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
             if let _ = navigationController{
                 navigationItem.title = "Discovered Service for \(deviceName)"
             }
-            
         }
-        
-        
     }
     
     // Quando discobre as caracteristicas do periférico, ultimo método a ser chamado pela conexão com o BLE
@@ -177,7 +169,6 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
             performSegueWithIdentifier("MapKitVC", sender: self);
         }        
     }
-    
     
     // Quando é recebido algo do Device - Retorno
     func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
@@ -247,8 +238,6 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         return devices.count
     }
     
-    
-    
     //Preenche a tableView
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -280,13 +269,11 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
             }
         }
         
-        
         return cell!
     }
     
     // Evento de toda vez que clicarem em uma célula
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         // Se estiver pelo menos um dispositvo no vetor (proximo do raio do iPhone)
         if (devices.count > 0){
             
@@ -321,7 +308,6 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let backItem = UIBarButtonItem()
         
@@ -329,9 +315,5 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
-    
-
-    
-    
     
 }

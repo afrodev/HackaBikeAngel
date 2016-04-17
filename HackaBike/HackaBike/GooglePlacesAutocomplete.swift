@@ -275,14 +275,12 @@ public class GooglePlacesAutocomplete: UINavigationController {
         
         closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: #selector(GooglePlacesAutocomplete.close))
         closeButton.style = UIBarButtonItemStyle.Done
-        closeButton.tintColor = UIColor(red: 99/255, green: 71/255, blue: 92/255, alpha: 1)
+        closeButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
         //        saveButton = UIBarButtonItem(title: "Usar", style: UIBarButtonItemStyle.Done, target: self, action: "salvar")
         //        saveButton.style = UIBarButtonItemStyle.Done
         
         gpaViewController.navigationItem.leftBarButtonItem = closeButton
-        //        gpaViewController.navigationItem.rightBarButtonItem = saveButton
-//        gpaViewController.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "FiraSans-Regular", size: 18)!, NSForegroundColorAttributeName : UIColor(red: 99/255, green: 71/255, blue: 92/255, alpha: 1)]
         gpaViewController.navigationItem.title = "Buscar endereço"
     }
     

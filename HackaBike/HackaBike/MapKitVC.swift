@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GooglePlacesAutocompleteDelegate, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
     
@@ -30,11 +31,12 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     )
     
     // Helpers endereco
+    var locationManager:CLLocationManager!
     var userAddress: String?
     var userNumber: Int?
     var addressPlace: Place?
     var addressClosed = false
-    
+    var request:MKDirectionsRequest?
     var blurMapBackground = UIView()
     var cells: [LiquidFloatingCell] = []
     var liquidButtonBackground = UIView()
@@ -66,7 +68,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mapView.showsUserLocation = true
         gpaViewController.gpaViewController.delegate = self
         
         // Configurando a mapview
@@ -106,7 +108,42 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         liquidButtonBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.7)
         liquidButtonBackground.bounds = UIScreen.mainScreen().bounds
         liquidButtonBackground.alpha = 0.7
+    
+
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        locationManager.requestAlwaysAuthorization()
     }
+    
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            // authorized location status when app is in use; update current location
+            locationManager.startUpdatingLocation()
+            // implement additional logic if needed...
+        }
+        // implement logic for other status values if needed...
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //
+        //        if (s.first as? CLLocation) != nil {
+        //            // implement logic upon location change and stop updating location until it is subsequently updated
+        //            locationManager.stopUpdatingLocation()
+        //        }
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        renderer.strokeColor = UIColor.blueColor()
+        return renderer
+    }
+    
+    /*........*/
+    
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -214,6 +251,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         
         gpaViewController.placeDelegate = self
         gpaViewController.modalPresentationStyle = .OverCurrentContext
+        
+        
+        /******************** ROTA *********************/
+        
         // Apresenta a view controller
         presentViewController(gpaViewController, animated: true, completion: nil)
     }
@@ -283,4 +324,5 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         }
         return screenSize
     }
+    
 }

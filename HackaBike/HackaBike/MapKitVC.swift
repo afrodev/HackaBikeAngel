@@ -42,6 +42,9 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        StyleNavigator().custom(self.navigationController!)
+        StyleNavigator().hidden(self.navigationController!)
+        
         gpaViewController.gpaViewController.delegate = self
         
         // Configurando a mapview
@@ -96,11 +99,13 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         switch index {
         case 0:
-            performSegueWithIdentifier("publish", sender: self)
+            Navigator().push("IndexOneVC", navigation: self.navigationController!)
         case 1:
-            performSegueWithIdentifier("history", sender: self)
+            Navigator().push("IndexTwoVC", navigation: self.navigationController!)
         case 2:
-            performSegueWithIdentifier("settings", sender: self)
+            Navigator().push("IndexThreeVC", navigation: self.navigationController!)
+        case 3:
+            Navigator().push("IndexFourVC", navigation: self.navigationController!)
         default:
             print("Error")
         }

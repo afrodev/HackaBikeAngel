@@ -46,6 +46,7 @@
                 <constraint firstItem="6Gg-TX-rba" firstAttribute="top" secondItem="24m-Y8-A7A" secondAttribute="bottom" id="ux4-m9-QrM"/>
                 <constraint firstAttribute="centerX" secondItem="24m-Y8-A7A" secondAttribute="centerX" id="y1i-qG-wtE"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
 </document>

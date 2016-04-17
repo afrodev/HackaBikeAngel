@@ -12,8 +12,7 @@ class IndexOneVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        StyleNavigator().notHidden(self.navigationController!)
     }
 
     override func didReceiveMemoryWarning() {

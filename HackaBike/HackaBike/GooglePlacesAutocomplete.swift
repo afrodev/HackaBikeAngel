@@ -338,6 +338,8 @@ public class GooglePlacesAutocompleteContainer: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        StyleNavigator().custom(self.navigationController!)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GooglePlacesAutocompleteContainer.keyboardWasShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GooglePlacesAutocompleteContainer.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
         

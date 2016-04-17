@@ -23,6 +23,8 @@
 		118B70CF1CC310AB00AA53B2 /* IndexTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70CE1CC310AB00AA53B2 /* IndexTwoVC.swift */; };
 		118B70D11CC310CF00AA53B2 /* IndexThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D01CC310CF00AA53B2 /* IndexThreeVC.swift */; };
 		118B70D31CC310E800AA53B2 /* IndexFourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D21CC310E800AA53B2 /* IndexFourVC.swift */; };
+		118B70D71CC3184D00AA53B2 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D61CC3184D00AA53B2 /* Navigator.swift */; };
+		118B70D91CC31A9B00AA53B2 /* StyleNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */; };
 		11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */; };
 		11D169971CC2FE7500975011 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */; };
 		11D169981CC2FE7500975011 /* GooglePlacesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169841CC2FE7500975011 /* GooglePlacesCell.xib */; };
@@ -61,6 +63,8 @@
 		118B70CE1CC310AB00AA53B2 /* IndexTwoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTwoVC.swift; sourceTree = "<group>"; };
 		118B70D01CC310CF00AA53B2 /* IndexThreeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexThreeVC.swift; sourceTree = "<group>"; };
 		118B70D21CC310E800AA53B2 /* IndexFourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexFourVC.swift; sourceTree = "<group>"; };
+		118B70D61CC3184D00AA53B2 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleNavigator.swift; sourceTree = "<group>"; };
 		11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesAutocomplete.h; sourceTree = "<group>"; };
 		11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
@@ -221,6 +225,16 @@
 			name = OthersViewControllers;
 			sourceTree = "<group>";
 		};
+		118B70DA1CC31D2A00AA53B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				118B70C91CC309DB00AA53B2 /* Singleton.swift */,
+				118B70D61CC3184D00AA53B2 /* Navigator.swift */,
+				118B70D81CC31A9B00AA53B2 /* StyleNavigator.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		3C0193FA9E5FF0CB681BDCC5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +265,7 @@
 		8B5AD94F1CC2F36A00770EA0 /* HackaBike */ = {
 			isa = PBXGroup;
 			children = (
-				118B70C91CC309DB00AA53B2 /* Singleton.swift */,
+				118B70DA1CC31D2A00AA53B2 /* Components */,
 				118B70B71CC3055E00AA53B2 /* Frameworks */,
 				118B70B61CC3054800AA53B2 /* ViewControllers */,
 				118B70B51CC3051800AA53B2 /* Resources */,
@@ -394,6 +408,7 @@
 				118B70D31CC310E800AA53B2 /* IndexFourVC.swift in Sources */,
 				11D1699F1CC2FE7500975011 /* SCLTextView.m in Sources */,
 				118B70C01CC3085B00AA53B2 /* LiquittableCircle.swift in Sources */,
+				118B70D71CC3184D00AA53B2 /* Navigator.swift in Sources */,
 				118B70D11CC310CF00AA53B2 /* IndexThreeVC.swift in Sources */,
 				118B70C71CC3085B00AA53B2 /* LiquidUtil.swift in Sources */,
 				118B70CF1CC310AB00AA53B2 /* IndexTwoVC.swift in Sources */,
@@ -410,6 +425,7 @@
 				11D1699B1CC2FE7500975011 /* SCLAlertView.m in Sources */,
 				118B70C51CC3085B00AA53B2 /* CGRectEx2.swift in Sources */,
 				11D1699A1CC2FE7500975011 /* JSSAlertView.swift in Sources */,
+				118B70D91CC31A9B00AA53B2 /* StyleNavigator.swift in Sources */,
 				118B70CA1CC309DB00AA53B2 /* Singleton.swift in Sources */,
 				118B70C11CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift in Sources */,
 			);

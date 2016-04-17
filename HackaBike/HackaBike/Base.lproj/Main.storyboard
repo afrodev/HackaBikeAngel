@@ -22,17 +22,17 @@
                     <navigationItem key="navigationItem" id="caW-CU-085"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="ltb-Vv-2od" kind="presentation" identifier="MapKitVC" id="FpG-uQ-C5s"/>
+                        <segue destination="UWp-hX-GPP" kind="presentation" identifier="MapKitVC" id="yww-T5-D8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622.5" y="344.5"/>
+            <point key="canvasLocation" x="168.5" y="344.5"/>
         </scene>
         <!--Index OneVC-->
         <scene sceneID="xXa-QM-QPQ">
             <objects>
-                <viewController id="UZF-nL-520" customClass="IndexOneVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndexOneVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UZF-nL-520" customClass="IndexOneVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9fT-S6-Fen"/>
                         <viewControllerLayoutGuide type="bottom" id="Ito-Or-tBp"/>
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RdA-oL-zpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169.5" y="1099.5"/>
+            <point key="canvasLocation" x="649.5" y="1189.5"/>
         </scene>
         <!--Map KitVC-->
         <scene sceneID="Jyb-5l-Tgp">
@@ -101,16 +101,21 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="pIG-rg-Pa7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dirButton" destination="Jp5-LZ-upc" id="9HW-9Z-JqK"/>
                         <outlet property="esqButton" destination="IRd-sD-cg3" id="hlb-L1-d0g"/>
                         <outlet property="mapView" destination="8ca-li-A5m" id="p60-Z3-NZu"/>
+                        <segue destination="UZF-nL-520" kind="show" identifier="IndexOneVC" id="5mH-N3-Fwu"/>
+                        <segue destination="mcS-q8-lIe" kind="show" identifier="IndexTwoVC" id="HRT-jX-hYQ"/>
+                        <segue destination="VUG-E1-v0V" kind="show" identifier="IndexThreeVC" id="GMY-Cx-Zyp"/>
+                        <segue destination="0X7-sR-ECi" kind="show" identifier="IndexFourVC" id="Twv-Cq-skP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzt-WI-5Ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075.5" y="344.5"/>
+            <point key="canvasLocation" x="1111.5" y="344.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CDx-LM-x7R">
@@ -127,12 +132,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TgC-7F-RwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169.5" y="344.5"/>
+            <point key="canvasLocation" x="-300.5" y="344.5"/>
         </scene>
         <!--Index TwoVC-->
         <scene sceneID="3W4-Yr-oe4">
             <objects>
-                <viewController id="mcS-q8-lIe" customClass="IndexTwoVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndexTwoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mcS-q8-lIe" customClass="IndexTwoVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QIY-G2-ycE"/>
                         <viewControllerLayoutGuide type="bottom" id="MZQ-10-iPb"/>
@@ -146,12 +151,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dI3-Ww-hsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622.5" y="1099.5"/>
+            <point key="canvasLocation" x="1111.5" y="1189.5"/>
         </scene>
         <!--Index ThreeVC-->
         <scene sceneID="LGm-gS-71p">
             <objects>
-                <viewController id="VUG-E1-v0V" customClass="IndexThreeVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndexThreeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VUG-E1-v0V" customClass="IndexThreeVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yeo-Zv-KuK"/>
                         <viewControllerLayoutGuide type="bottom" id="1w1-bW-6Q4"/>
@@ -165,12 +170,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YV-4a-kM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075.5" y="1099.5"/>
+            <point key="canvasLocation" x="1565.5" y="1189.5"/>
         </scene>
         <!--Index FourVC-->
         <scene sceneID="euK-1F-TXu">
             <objects>
-                <viewController id="0X7-sR-ECi" customClass="IndexFourVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndexFourVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0X7-sR-ECi" customClass="IndexFourVC" customModule="HackaBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AAA-6m-SpL"/>
                         <viewControllerLayoutGuide type="bottom" id="6bm-l5-MaJ"/>
@@ -184,7 +189,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBq-7N-AcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517.5" y="1099.5"/>
+            <point key="canvasLocation" x="1565.5" y="344.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FYU-bR-zl3">
+            <objects>
+                <navigationController id="UWp-hX-GPP" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rbe-UK-unq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ltb-Vv-2od" kind="relationship" relationship="rootViewController" id="y6a-n0-505"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VpI-3R-phn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649.5" y="344.5"/>
         </scene>
     </scenes>
 </document>

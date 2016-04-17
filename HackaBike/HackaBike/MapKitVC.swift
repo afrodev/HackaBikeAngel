@@ -101,7 +101,8 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         switch index {
         case 0:
-            Navigator().push("IndexOneVC", navigation: self.navigationController!)
+            //Navigator().push("IndexOneVC", navigation: self.navigationController!)
+            performSegueWithIdentifier("SendAlertVC", sender: nil)
         case 1:
             DevicesVC.writeValue("NOT+1/r/n")
         case 2:

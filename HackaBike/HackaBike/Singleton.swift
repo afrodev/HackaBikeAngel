@@ -11,6 +11,8 @@ import Foundation
 class Singleton {
     
     var floatingActionButton: LiquidFloatingActionButton!
+    var deviceAtual: String?
+    var dispositivosBluetooth: DevicesVC?
     
     class var sharedInstance: Singleton {
         struct Static {

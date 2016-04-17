@@ -15,7 +15,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            performSegueWithIdentifier("BleVC", sender: self)
+            performSegueWithIdentifier("DevicesVC", sender: self)
         }
         else {
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
@@ -51,8 +51,8 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
                 // Do work
             }
         }
-        
-        Navigator().present("MapKitVC", navigation: self.navigationController!)
+          performSegueWithIdentifier("DevicesVC", sender: self)
+       // Navigator().present("MapKitVC", navigation: self.navigationController!)
         
     }
     

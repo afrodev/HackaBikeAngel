@@ -338,7 +338,7 @@ class CircleLiquidBaseView : ActionBarBaseView {
     func open(cells: [LiquidFloatingCell]) {
         stop()
         _ = self.frame.height * 1.25
-        displayLink = CADisplayLink(target: self, selector: Selector("didDisplayRefresh:"))
+        displayLink = CADisplayLink(target: self, selector: #selector(CircleLiquidBaseView.didDisplayRefresh(_:)))
         displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         opening = true
         for cell in cells {
@@ -352,7 +352,7 @@ class CircleLiquidBaseView : ActionBarBaseView {
         stop()
         _ = self.frame.height * 1.25
         opening = false
-        displayLink = CADisplayLink(target: self, selector: Selector("didDisplayRefresh:"))
+        displayLink = CADisplayLink(target: self, selector: #selector(CircleLiquidBaseView.didDisplayRefresh(_:)))
         displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         for cell in cells {
             cell.layer.removeAllAnimations()

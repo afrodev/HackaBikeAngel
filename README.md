@@ -1,4 +1,5 @@
-# HackaBikeAngel
+# HackaBikeAngel 
+<img src="https://github.com/ezefranca/HackaBikeAngel/blob/master/appicon_1024x1024.png" width="200"> 
 
 Projeto Desenvolvido na AngelHack São Paulo 2016
 

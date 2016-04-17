@@ -11,6 +11,7 @@ import UIKit
 class GooglePlacesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var enderecoLabel: UILabel!
+    @IBOutlet weak var favorite: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,9 +9,11 @@
 import UIKit
 import MapKit
 
-class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GooglePlacesAutocompleteDelegate {
+class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GooglePlacesAutocompleteDelegate, LiquidFloatingActionButtonDelegate, LiquidFloatingActionButtonDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var esqButton: UIButton!
+    @IBOutlet weak var dirButton: UIView!
     
     // Distancia inicial de abrangencia (Zoom)
     let regionRadius: CLLocationDistance = 1000
@@ -33,7 +35,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     var addressClosed = false
     
     var blurMapBackground = UIView()
-    
+    var cells: [LiquidFloatingCell] = []
+    var liquidButtonBackground = UIView()
+    var floatingActionButton: LiquidFloatingActionButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,44 +47,76 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         // Configurando a mapview
         mapView.delegate = self
         
-        // Detectando a posicao atual do usuario em background
-        //        PFGeoPoint.geoPointForCurrentLocationInBackground { (geopoint, error) -> Void in
-        //            if let geopoint = geopoint as PFGeoPoint? {
-        //                // Guardando a localizacao no tipo CLLocation (para a mapView)
-        //                let localizacaoCL = CLLocation(latitude: geopoint.latitude, longitude:geopoint.longitude)
-        //
-        //                // Adicionando um pin dessa localizacao no mapa
-        //                self.adicionarPinAoMapa(geopoint.latitude, longitude: geopoint.longitude)
-        //
-        //                // Centralizando o mapa
-        //                self.centerMapOnLocation(localizacaoCL)
-        //                self.gpaViewController.gpaViewController.getPlacesReversed(geopoint.latitude, longitude: geopoint.longitude)
-        //            }
-        //        }
         
         blurMapBackground.frame.size = screenSize()
         blurMapBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.8)
         blurMapBackground.bounds = UIScreen.mainScreen().bounds
         blurMapBackground.alpha = 0.8
+        
+        self.esqButton.layer.cornerRadius = self.esqButton.frame.width/2
+        
+        let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
+            self.floatingActionButton = LiquidFloatingActionButton(frame: frame)
+            self.floatingActionButton.animateStyle = style
+            self.floatingActionButton.dataSource = self
+            self.floatingActionButton.delegate = self
+            return self.floatingActionButton
+        }
+        
+        let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+            return LiquidFloatingCell(icon: UIImage(named: iconName)!)
+        }
+        
+        cells.append(cellFactory("message"))
+        cells.append(cellFactory("message"))
+        cells.append(cellFactory("message"))
+        cells.append(cellFactory("message"))
+        
+        let floatingFrame = self.dirButton.layer.frame
+        let bottomRightButton = createButton(floatingFrame, .Up)
+        self.view.addSubview(bottomRightButton)
+        Singleton.sharedInstance.floatingActionButton = self.floatingActionButton
+        
+        liquidButtonBackground.frame.size = screenSize()
+        liquidButtonBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.7)
+        liquidButtonBackground.bounds = UIScreen.mainScreen().bounds
+        liquidButtonBackground.alpha = 0.7
+
     }
     
-    /**
-     Acao para quando o botao proximo for acionado
-     */
-    @IBAction func btnProximoAction(sender: AnyObject) {
-        if self.userNumber == nil {
-            showStreetNumberAlert()
-        } else {
-            //            // Convertendo a localizacao do pin para um PFGeoPoint, para salvar no Parse
-            //            let localizacaoGP = PFGeoPoint(latitude: self.pinAnnotation.coordinate.latitude, longitude: self.pinAnnotation.coordinate.longitude)
-            //            // Definindo essa localizacao no usuario
-            //            self.usuarioAtual?.setObject(localizacaoGP, forKey: "localizacao");
-            //            self.usuarioAtual?.setObject(self.userAddress!, forKey: "endereco");
-            //            self.usuarioAtual?.setObject(self.userNumber!, forKey: "numEndereco");
-            //            self.performSegueWithIdentifier("segueConfirm", sender: self)
+    // Usado para criar as celulas do botão flutuante
+    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+        return cells.count
+    }
+    
+    func cellForIndex(index: Int) -> LiquidFloatingCell {
+        return cells[index]
+    }
+    
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        switch index {
+        case 0:
+            performSegueWithIdentifier("publish", sender: self)
+        case 1:
+            performSegueWithIdentifier("history", sender: self)
+        case 2:
+            performSegueWithIdentifier("settings", sender: self)
+        default:
+            print("Error")
         }
     }
-    
+
+    func didSelectLiquidFloatingActionButton(isOpening: Bool) {
+        if isOpening {
+            self.view.insertSubview(liquidButtonBackground, belowSubview: Singleton.sharedInstance.floatingActionButton)
+            UIView.animateWithDuration(0.2, animations: {self.liquidButtonBackground.alpha = 0.7}, completion: nil)
+        } else {
+            UIView.animateWithDuration(0.2, animations: {self.liquidButtonBackground.alpha = 0.0}, completion: {(value: Bool) in
+                                        self.liquidButtonBackground.removeFromSuperview()
+            })
+        }
+    }
+
     /**
      Metodo helper, que serve pra centralizar o mapa na posicao selecionada
      */

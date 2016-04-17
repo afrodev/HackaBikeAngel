@@ -10,6 +10,15 @@
 		118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */; };
 		118B70AF1CC2FFAB00AA53B2 /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */; };
 		118B70B41CC304AF00AA53B2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70B31CC304AF00AA53B2 /* LoginVC.swift */; };
+		118B70C01CC3085B00AA53B2 /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70B81CC3085B00AA53B2 /* LiquittableCircle.swift */; };
+		118B70C11CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70B91CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift */; };
+		118B70C21CC3085B00AA53B2 /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70BA1CC3085B00AA53B2 /* UIColorEx.swift */; };
+		118B70C31CC3085B00AA53B2 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70BB1CC3085B00AA53B2 /* ArrayEx.swift */; };
+		118B70C41CC3085B00AA53B2 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70BC1CC3085B00AA53B2 /* CGPointEx.swift */; };
+		118B70C51CC3085B00AA53B2 /* CGRectEx2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70BD1CC3085B00AA53B2 /* CGRectEx2.swift */; };
+		118B70C61CC3085B00AA53B2 /* LiquidFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70BE1CC3085B00AA53B2 /* LiquidFloatingActionButton.swift */; };
+		118B70C71CC3085B00AA53B2 /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70BF1CC3085B00AA53B2 /* LiquidUtil.swift */; };
+		118B70CA1CC309DB00AA53B2 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B70C91CC309DB00AA53B2 /* Singleton.swift */; };
 		11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */; };
 		11D169971CC2FE7500975011 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */; };
 		11D169981CC2FE7500975011 /* GooglePlacesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D169841CC2FE7500975011 /* GooglePlacesCell.xib */; };
@@ -35,6 +44,15 @@
 		118B70AC1CC2FFAB00AA53B2 /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		118B70AD1CC2FFAB00AA53B2 /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
 		118B70B31CC304AF00AA53B2 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		118B70B81CC3085B00AA53B2 /* LiquittableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquittableCircle.swift; sourceTree = "<group>"; };
+		118B70B91CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
+		118B70BA1CC3085B00AA53B2 /* UIColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
+		118B70BB1CC3085B00AA53B2 /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
+		118B70BC1CC3085B00AA53B2 /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
+		118B70BD1CC3085B00AA53B2 /* CGRectEx2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx2.swift; sourceTree = "<group>"; };
+		118B70BE1CC3085B00AA53B2 /* LiquidFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidFloatingActionButton.swift; sourceTree = "<group>"; };
+		118B70BF1CC3085B00AA53B2 /* LiquidUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidUtil.swift; sourceTree = "<group>"; };
+		118B70C91CC309DB00AA53B2 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		11D169811CC2FE7500975011 /* GooglePlacesAutocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesAutocomplete.h; sourceTree = "<group>"; };
 		11D169821CC2FE7500975011 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		11D169831CC2FE7500975011 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
@@ -134,6 +152,55 @@
 			name = AlertView;
 			sourceTree = "<group>";
 		};
+		118B70B51CC3051800AA53B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B5AD9541CC2F36A00770EA0 /* Main.storyboard */,
+				8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */,
+				8B5AD95C1CC2F36A00770EA0 /* LaunchScreen.storyboard */,
+				8B5AD95F1CC2F36A00770EA0 /* Info.plist */,
+				8B5AD9571CC2F36A00770EA0 /* HackaBike.xcdatamodeld */,
+				8BEBC3B21CC2F4AA0060DC1C /* HackaBike-Bridging-Header.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		118B70B61CC3054800AA53B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */,
+				118B70B31CC304AF00AA53B2 /* LoginVC.swift */,
+				8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		118B70B71CC3055E00AA53B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				118B70C81CC3086A00AA53B2 /* LiquidButton */,
+				118B70B21CC3047B00AA53B2 /* AlertView */,
+				118B70B11CC3045400AA53B2 /* MapHelper */,
+				118B70B01CC3043E00AA53B2 /* GooglePlaces */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		118B70C81CC3086A00AA53B2 /* LiquidButton */ = {
+			isa = PBXGroup;
+			children = (
+				118B70B81CC3085B00AA53B2 /* LiquittableCircle.swift */,
+				118B70B91CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift */,
+				118B70BA1CC3085B00AA53B2 /* UIColorEx.swift */,
+				118B70BB1CC3085B00AA53B2 /* ArrayEx.swift */,
+				118B70BC1CC3085B00AA53B2 /* CGPointEx.swift */,
+				118B70BD1CC3085B00AA53B2 /* CGRectEx2.swift */,
+				118B70BE1CC3085B00AA53B2 /* LiquidFloatingActionButton.swift */,
+				118B70BF1CC3085B00AA53B2 /* LiquidUtil.swift */,
+			);
+			name = LiquidButton;
+			sourceTree = "<group>";
+		};
 		3C0193FA9E5FF0CB681BDCC5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,18 +231,10 @@
 		8B5AD94F1CC2F36A00770EA0 /* HackaBike */ = {
 			isa = PBXGroup;
 			children = (
-				118B70B21CC3047B00AA53B2 /* AlertView */,
-				118B70B11CC3045400AA53B2 /* MapHelper */,
-				118B70B01CC3043E00AA53B2 /* GooglePlaces */,
-				8B5AD9501CC2F36A00770EA0 /* AppDelegate.swift */,
-				118B70B31CC304AF00AA53B2 /* LoginVC.swift */,
-				8BEBC3B61CC2F9C80060DC1C /* MapKitVC.swift */,
-				8B5AD9541CC2F36A00770EA0 /* Main.storyboard */,
-				8B5AD95A1CC2F36A00770EA0 /* Assets.xcassets */,
-				8B5AD95C1CC2F36A00770EA0 /* LaunchScreen.storyboard */,
-				8B5AD95F1CC2F36A00770EA0 /* Info.plist */,
-				8B5AD9571CC2F36A00770EA0 /* HackaBike.xcdatamodeld */,
-				8BEBC3B21CC2F4AA0060DC1C /* HackaBike-Bridging-Header.h */,
+				118B70C91CC309DB00AA53B2 /* Singleton.swift */,
+				118B70B71CC3055E00AA53B2 /* Frameworks */,
+				118B70B61CC3054800AA53B2 /* ViewControllers */,
+				118B70B51CC3051800AA53B2 /* Resources */,
 			);
 			path = HackaBike;
 			sourceTree = "<group>";
@@ -307,9 +366,15 @@
 				118B70AF1CC2FFAB00AA53B2 /* PinAnnotation.swift in Sources */,
 				11D169961CC2FE7500975011 /* GooglePlacesAutocomplete.swift in Sources */,
 				11D169A11CC2FE7500975011 /* UIImage+ImageEffects.m in Sources */,
+				118B70C41CC3085B00AA53B2 /* CGPointEx.swift in Sources */,
 				118B70B41CC304AF00AA53B2 /* LoginVC.swift in Sources */,
+				118B70C31CC3085B00AA53B2 /* ArrayEx.swift in Sources */,
 				11D169A01CC2FE7500975011 /* SCLTimerDisplay.m in Sources */,
 				11D1699F1CC2FE7500975011 /* SCLTextView.m in Sources */,
+				118B70C01CC3085B00AA53B2 /* LiquittableCircle.swift in Sources */,
+				118B70C71CC3085B00AA53B2 /* LiquidUtil.swift in Sources */,
+				118B70C21CC3085B00AA53B2 /* UIColorEx.swift in Sources */,
+				118B70C61CC3085B00AA53B2 /* LiquidFloatingActionButton.swift in Sources */,
 				118B70AE1CC2FFAB00AA53B2 /* MapHelper.swift in Sources */,
 				8B5AD9511CC2F36A00770EA0 /* AppDelegate.swift in Sources */,
 				8B5AD9591CC2F36A00770EA0 /* HackaBike.xcdatamodeld in Sources */,
@@ -319,7 +384,10 @@
 				8BEBC3B71CC2F9C80060DC1C /* MapKitVC.swift in Sources */,
 				11D1699E1CC2FE7500975011 /* SCLButton.m in Sources */,
 				11D1699B1CC2FE7500975011 /* SCLAlertView.m in Sources */,
+				118B70C51CC3085B00AA53B2 /* CGRectEx2.swift in Sources */,
 				11D1699A1CC2FE7500975011 /* JSSAlertView.swift in Sources */,
+				118B70CA1CC309DB00AA53B2 /* Singleton.swift in Sources */,
+				118B70C11CC3085B00AA53B2 /* SimpleCircleLiquidEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

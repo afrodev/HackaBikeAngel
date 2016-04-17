@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,23 +21,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHq-4W-giv">
-                        <rect key="frame" x="8" y="11" width="304" height="25"/>
+                        <rect key="frame" x="49" y="11" width="263" height="25"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="XC4-uU-NLT"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew4-ru-iJe">
+                        <rect key="frame" x="18" y="12" width="21" height="20"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="21" id="hBG-J2-ERA"/>
+                            <constraint firstAttribute="height" constant="20" id="oo8-Fn-iCi"/>
+                        </constraints>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="leadingMargin" secondItem="WHq-4W-giv" secondAttribute="leading" id="XG8-mq-o5Y"/>
-                    <constraint firstItem="WHq-4W-giv" firstAttribute="top" secondItem="egS-57-036" secondAttribute="topMargin" constant="3" id="e8g-Bx-kRc"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="WHq-4W-giv" secondAttribute="bottom" constant="2" id="oLm-RO-QaB"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="WHq-4W-giv" secondAttribute="trailing" id="qnM-f1-Qb7"/>
+                    <constraint firstItem="ew4-ru-iJe" firstAttribute="leading" secondItem="egS-57-036" secondAttribute="leadingMargin" constant="10" id="8kP-Av-LZ4"/>
+                    <constraint firstItem="WHq-4W-giv" firstAttribute="leading" secondItem="ew4-ru-iJe" secondAttribute="trailing" constant="10" id="YXb-Gf-sMR"/>
+                    <constraint firstItem="WHq-4W-giv" firstAttribute="centerY" secondItem="egS-57-036" secondAttribute="centerY" id="ms1-uo-GXi"/>
+                    <constraint firstItem="ew4-ru-iJe" firstAttribute="centerY" secondItem="egS-57-036" secondAttribute="centerY" id="nky-4J-yVA"/>
+                    <constraint firstItem="WHq-4W-giv" firstAttribute="trailing" secondItem="egS-57-036" secondAttribute="trailingMargin" id="u0f-He-Mg2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="enderecoLabel" destination="WHq-4W-giv" id="z3L-tR-3LR"/>
+                <outlet property="favorite" destination="ew4-ru-iJe" id="bQ6-MQ-Ltn"/>
             </connections>
             <point key="canvasLocation" x="262" y="277"/>
         </tableViewCell>

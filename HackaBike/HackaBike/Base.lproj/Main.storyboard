@@ -44,18 +44,37 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8ca-li-A5m">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-sD-cg3">
-                                <rect key="frame" x="20" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-sD-cg3">
+                                <rect key="frame" x="16" y="581" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Ap0-Uo-EXj"/>
+                                    <constraint firstAttribute="height" constant="56" id="R96-dq-kJu"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeAddress:" destination="ltb-Vv-2od" eventType="touchUpInside" id="Oa1-rz-VrP"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp5-LZ-upc">
+                                <rect key="frame" x="303" y="581" width="56" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="7nK-o3-hlY"/>
+                                    <constraint firstAttribute="width" constant="56" id="pCG-av-M0X"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="IRd-sD-cg3" secondAttribute="bottom" constant="30" id="JqR-Ww-eZr"/>
                             <constraint firstItem="8ca-li-A5m" firstAttribute="leading" secondItem="usD-GP-CZb" secondAttribute="leading" id="KhR-xJ-par"/>
                             <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="8ca-li-A5m" secondAttribute="bottom" id="N6M-cc-F7f"/>
                             <constraint firstItem="8ca-li-A5m" firstAttribute="top" secondItem="h9a-7D-PQp" secondAttribute="bottom" id="SBX-fU-Jx6"/>
                             <constraint firstItem="8ca-li-A5m" firstAttribute="top" secondItem="usD-GP-CZb" secondAttribute="topMargin" id="Zrf-7Q-AlZ"/>
+                            <constraint firstItem="tUD-Xf-XhH" firstAttribute="top" secondItem="Jp5-LZ-upc" secondAttribute="bottom" constant="30" id="lci-Jc-f0W"/>
                             <constraint firstAttribute="trailing" secondItem="8ca-li-A5m" secondAttribute="trailing" id="nKx-e5-xGP"/>
+                            <constraint firstItem="IRd-sD-cg3" firstAttribute="leading" secondItem="usD-GP-CZb" secondAttribute="leadingMargin" id="q5b-3y-jOk"/>
+                            <constraint firstItem="Jp5-LZ-upc" firstAttribute="trailing" secondItem="usD-GP-CZb" secondAttribute="trailingMargin" id="w0k-WL-9ex"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -65,6 +84,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dirButton" destination="Jp5-LZ-upc" id="9HW-9Z-JqK"/>
+                        <outlet property="esqButton" destination="IRd-sD-cg3" id="hlb-L1-d0g"/>
                         <outlet property="mapView" destination="8ca-li-A5m" id="p60-Z3-NZu"/>
                     </connections>
                 </viewController>

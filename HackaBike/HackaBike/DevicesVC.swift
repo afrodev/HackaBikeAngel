@@ -263,15 +263,17 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         if let cell = cell {
             //Procura no vetor de valores de devices o nome dos devices
             if let name = discoveredPeripheralArray[indexPath.row].name {
-                
+                print(name)
                 //Altera o texto da label de cada célula
                 if let textLabelText = cell.textLabel {
                     //textLabelText.text = name
+                    print(textLabelText)
                 }
                 
                 //Altera a label de detalhe tambem
                 if let detailTextLabel = cell.detailTextLabel{
                     //detailTextLabel.text = devicesRSSI[indexPath.row].stringValue
+                    print(detailTextLabel)
                 }
             }
         }

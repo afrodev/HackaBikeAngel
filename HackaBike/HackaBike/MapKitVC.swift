@@ -70,6 +70,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         cells.append(cellFactory("message"))
         cells.append(cellFactory("message"))
         cells.append(cellFactory("message"))
+        cells.append(cellFactory("message"))
         
         let floatingFrame = self.dirButton.layer.frame
         let bottomRightButton = createButton(floatingFrame, .Up)
@@ -100,8 +101,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         switch index {
         case 0:
-            DevicesVC.writeValue("NOT+1/r/n")
-            //Navigator().push("IndexOneVC", navigation: self.navigationController!)
+            Navigator().push("IndexOneVC", navigation: self.navigationController!)
         case 1:
             DevicesVC.writeValue("NOT+1/r/n")
             //Navigator().push("IndexTwoVC", navigation: self.navigationController!)
@@ -111,6 +111,8 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         case 3:
             DevicesVC.writeValue("NOT+1/r/n")
             //Navigator().push("IndexFourVC", navigation: self.navigationController!)
+        case 4:
+            DevicesVC.writeValue("NOT+1/r/n")
         default:
             print("Error")
         }

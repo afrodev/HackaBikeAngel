@@ -101,10 +101,12 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         //Pego o UUID do dispositivo que vou me conectar
         if let name = peripheral.name {
             
+            
+            
             //if name == "CafeBLE" {
                 
                 // Preenche o dicionario atraves do UUID como indice, com o dado do periferico(BLE)
-                if(devices[name] == nil){
+                if(devices[name] == nil) {
                     devices[name] = peripheral
                     devicesRSSI.append(RSSI) // Adiciona na lista da tableview
                     self.tableView.reloadData()
@@ -261,7 +263,9 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         if let cell = cell {
             //Procura no vetor de valores de devices o nome dos devices
             if let name = discoveredPeripheralArray[indexPath.row].name {
-                print(name)
+                
+                cell.deviceName.text = name;
+                
                 //Altera o texto da label de cada célula
                 if let textLabelText = cell.textLabel {
                     //textLabelText.text = name

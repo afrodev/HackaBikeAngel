@@ -11,6 +11,8 @@ import FBSDKLoginKit
 
 class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBOutlet weak var fbView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +22,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         else {
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
-            loginView.center = self.view.center
+            loginView.frame = self.fbView.frame
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
             loginView.delegate = self
         }

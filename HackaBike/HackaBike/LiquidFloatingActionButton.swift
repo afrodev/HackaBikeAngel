@@ -54,7 +54,7 @@ public class LiquidFloatingActionButton : UIView {
         }
     }
     
-    @IBInspectable public var color: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0) {
+    @IBInspectable public var color: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0) {
         didSet {
             baseView.color = color
         }
@@ -157,7 +157,7 @@ public class LiquidFloatingActionButton : UIView {
     private func drawPlus(rotation: CGFloat) {
         plusLayer.frame = CGRect(origin: CGPointZero, size: self.frame.size)
         plusLayer.lineCap = kCALineCapRound
-        plusLayer.strokeColor = UIColor(red: 111/255, green: 82/255, blue: 105/255, alpha: 0.8).CGColor // TODO: customizable
+        plusLayer.strokeColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).CGColor // TODO: customizable
         plusLayer.lineWidth = 3.0
         
         plusLayer.path = pathPlus(rotation).CGPath
@@ -512,7 +512,7 @@ public class LiquidFloatingCell : LiquittableCircle {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(image: UIImage, tintColor: UIColor = UIColor(red: 111/255, green: 82/255, blue: 105/255, alpha: 0.8)) {
+    func setup(image: UIImage, tintColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)) {
         imageView.image = image.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         imageView.tintColor = tintColor
         setupView(imageView)
@@ -541,7 +541,7 @@ public class LiquidFloatingCell : LiquittableCircle {
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if responsible {
             originalColor = color
-            color = UIColor(red: 111/255, green: 82/255, blue: 105/255, alpha: 0.8)
+            color = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
             setNeedsDisplay()
         }
     }

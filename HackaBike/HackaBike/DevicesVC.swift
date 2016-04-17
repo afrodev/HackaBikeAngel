@@ -173,9 +173,7 @@ class DevicesVC: UITableViewController, CBCentralManagerDelegate, CBPeripheralDe
         if(!abriuTela){
             abriuTela = true
             performSegueWithIdentifier("MapKitVC", sender: self);
-            //self.performSegueWithIdentifier("segueCafeteira", sender: self)
-        }
-        
+        }        
     }
     
     

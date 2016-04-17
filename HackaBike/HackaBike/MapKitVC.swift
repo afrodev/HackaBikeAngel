@@ -14,6 +14,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var esqButton: UIButton!
     @IBOutlet weak var dirButton: UIView!
+    @IBOutlet weak var container: UIView!
     
     // Distancia inicial de abrangencia (Zoom)
     let regionRadius: CLLocationDistance = 1000
@@ -38,6 +39,30 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     var cells: [LiquidFloatingCell] = []
     var liquidButtonBackground = UIView()
     var floatingActionButton: LiquidFloatingActionButton!
+
+    func animationUp() {
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(MapKitVC.handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
+        self.container.hidden = false
+        self.view.bringSubviewToFront(self.container)
+        UIView.animateWithDuration(0.5, delay: 0.3, options: [], animations: {
+            self.container.center.y -= self.view.bounds.height
+            }, completion: { (value: Bool) in
+        })
+        
+    }
+
+    func animationDown() {
+        UIView.animateWithDuration(0.5, delay: 0.3, options: [], animations: {
+            self.container.center.y += self.view.bounds.height }, completion: { (value: Bool) in
+                self.container.hidden = true
+                self.view.sendSubviewToBack(self.container)
+        })
+    }
+
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        animationDown()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +91,11 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             return LiquidFloatingCell(icon: UIImage(named: iconName)!)
         }
         
-        cells.append(cellFactory("message"))
-        cells.append(cellFactory("message"))
-        cells.append(cellFactory("message"))
-        cells.append(cellFactory("message"))
-        cells.append(cellFactory("message"))
+        cells.append(cellFactory("icone_sibebuttons_feed"))
+        cells.append(cellFactory("icone_sibebuttons_localderisco"))
+        cells.append(cellFactory("icone_sibebuttons_traffic"))
+        cells.append(cellFactory("icone_sibebuttons_ladeira"))
+        cells.append(cellFactory("icone_sibebuttons_buracos"))
         
         let floatingFrame = self.dirButton.layer.frame
         let bottomRightButton = createButton(floatingFrame, .Up)
@@ -81,7 +106,6 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         liquidButtonBackground.backgroundColor = UIColorFromHex(0x000000, alpha: 0.7)
         liquidButtonBackground.bounds = UIScreen.mainScreen().bounds
         liquidButtonBackground.alpha = 0.7
-
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -101,8 +125,7 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         switch index {
         case 0:
-            //Navigator().push("IndexOneVC", navigation: self.navigationController!)
-            performSegueWithIdentifier("SendAlertVC", sender: nil)
+            self.animationUp()
         case 1:
             DevicesVC.writeValue("NOT+1/r/n")
         case 2:

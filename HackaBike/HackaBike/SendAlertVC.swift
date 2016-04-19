@@ -67,19 +67,31 @@ class SendAlertVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        Singleton.sharedInstance.pessoaAtual?.name = defaults.objectForKey("userName") as! String
+        //Singleton.sharedInstance.pessoaAtual?.name = defaults.objectForKey("userName") as! String
         
         let post = Post()
-        post.titulo =  self.titleLabel.text
-        post.pessoaId = Singleton.sharedInstance.pessoaAtual?.objectId
-        post.latitude = Singleton.sharedInstance.pessoaAtual?.latitude
-        post.longitude = Singleton.sharedInstance.pessoaAtual?.longitude
-        post.pessoaNome = Singleton.sharedInstance.pessoaAtual?.name
+        post.titulo =  "buraco"
+        post.pessoaId = "PJTNQgddai"
+        post.latitude = 30.0
+        post.longitude = 30.0
+        post.pessoaNome = "Nome Teste"
         
-//        PostController.insertPost(post) { (resp:String?) in
-//            print(resp)
-//            print("Ïnserido com sucesso")
-//        }
+        PostController.insertPost(post) { (resp:String?) in
+            if resp != nil {
+                print("Ïnserido com sucesso")
+            } else {
+                print("ERRO ")
+
+            }
+            
+            let ac = UIAlertController(title: "Inserido com sucesso", message: .None, preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(ac, animated: true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
+            
+            
+            print(resp)
+        }
     }
     
     /*

@@ -42,7 +42,6 @@ class PostController: NSObject {
     class func insertPost(post: Post, completionHandler: (String?) -> ()) {
         
         let parameters = [
-            "objectId" : post.objectId,
             "pessoaId" : ["objectId" : post.pessoaNome,
                 "__type": "Pointer",
                 "className": "Person"],
@@ -56,16 +55,21 @@ class PostController: NSObject {
             
         ]
         
-        let request = Alamofire.request(.POST, kBASE_URL + "/1/classes/Post", parameters: parameters as? [String : AnyObject], headers: kHEADERS, encoding: .JSON)
+        let r = Alamofire.request(.POST, "\(kBASE_URL)/1/classes/Post", parameters: parameters as? [String : AnyObject], headers: kHEADERS)
         
-        request.responseJSON { (response:Response<AnyObject, NSError>) -> Void in
+        
+        
+        r.responseJSON { (response:Response<AnyObject, NSError>) -> Void in
+            
+            print("aaa" )
             do {
                 let responseDictionary = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments) as! NSDictionary
                 
                 if let resultObjectId = responseDictionary.objectForKey("objectId") as? String  {
+                    print(resultObjectId)
                     completionHandler(resultObjectId)
                 } else {
-                    completionHandler("ss")
+                    completionHandler(nil)
                 }
                 
             } catch _ {

@@ -215,6 +215,9 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             PostController.insertPost(post) { (resp:String?) in
                 print(resp)
                 DevicesVC.writeValue("DIR+UP/r/n")
+                let ac = UIAlertController(title: "Alerta", message: "Alerta enviado com sucesso", preferredStyle: .Alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(ac, animated: true, completion: nil)
                 //alertSucess("Enviado feed com sucesso", description: "Enviado")
             }
         case 2:
@@ -224,6 +227,9 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             post.longitude = locationManager.location?.coordinate.longitude
             post.pessoaNome = "transito"
             DevicesVC.writeValue("DIR+LEFT/r/n")
+            let ac = UIAlertController(title: "Alerta", message: "Alerta enviado com sucesso", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(ac, animated: true, completion: nil)
 
             PostController.insertPost(post) { (resp:String?) in
                 print(resp)
@@ -238,7 +244,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             post.longitude = locationManager.location?.coordinate.longitude
             post.pessoaNome = "ladeira"
             DevicesVC.writeValue("DIR+RIGHT/r/n")
-
+            let ac = UIAlertController(title: "Alerta", message: "Alerta enviado com sucesso", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(ac, animated: true, completion: nil)
+            
             PostController.insertPost(post) { (resp:String?) in
                 print(resp)
                 DevicesVC.writeValue("DIR+RIGHT/r/n")
@@ -253,6 +262,10 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
             post.longitude = locationManager.location?.coordinate.longitude
             post.pessoaNome = "buraco"
             DevicesVC.writeValue("HOLE/r/n")
+            
+            let ac = UIAlertController(title: "Alerta", message: "Alerta enviado com sucesso", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(ac, animated: true, completion: nil)
 
             PostController.insertPost(post) { (resp:String?) in
                 print(resp)
@@ -263,6 +276,8 @@ class MapKitVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, 
         default:
             print("Error")
         }
+        
+        
         
         Singleton.sharedInstance.pessoaAtual?.latitude = post.latitude
         Singleton.sharedInstance.pessoaAtual?.longitude = post.longitude
